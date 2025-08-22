@@ -1,0 +1,189 @@
+{
+  "day_columns": {
+    "1": { "start": 2, "span": 2, "title": "Day 1: Opening and Technical Sessions" },
+    "2": { "start": 4, "span": 2, "title": "Day 2: Technical Deep Dive" },
+    "3": { "start": 6, "span": 2, "title": "Day 3: Closing and Conclusions" },
+    "4": { "start": 8, "span": 2, "title": "Day 4: Field Trip and Workshops" }
+  },
+  "time_slots": [
+    "08:30", "09:10", "10:10", "10:40", "12:00", "12:30", "14:30", "13:30", "15:30", "16:00", "17:30"
+  ],
+  "sessions": [
+    {
+      "day": 1, "column": 2, "span": 2, "startTime": "08:30", "endTime": "10:10",
+      "title": "Opening Ceremony", "type": "plenary",
+      "details_type": "presentations",
+      "details": [
+        { "topic": "Welcome to LGC2025", "presenter": "Dr. Elizabeth Torio", "affiliation": "LAGEO" },
+        { "topic": "Past, present, and future of geothermal energy in El Salvador", "presenter": "Dr. Mynor Gil", "affiliation": "President of LAGEO" },
+        { "topic": "Past, present, and future of geothermal energy in Chile", "presenter": "Dr. Diego Morata", "affiliation": "Director of CEGA" },
+        { "topic": "Past, present, and future of geothermal energy in Mexico", "presenter": "Dr. Heber Diez", "affiliation": "Geothermal Engineer - TRIUM" },
+        { "topic": "IGA's vision for geothermal energy in LATAM", "presenter": "Dr. Bjarni Palsson", "affiliation": "President of the International Geothermal Association" }
+      ]
+    },
+    {
+      "day": 1, "column": 2, "span": 2, "startTime": "10:10", "endTime": "10:40",
+      "title": "Coffee Break", "type": "break", "details_type": "text",
+      "details": "Coffee and snack break. Provided by the Sheraton Presidente Hotel."
+    },
+    {
+      "day": 1, "column": 2, "span": 1, "startTime": "10:40", "endTime": "12:00",
+      "title": "Presentations: Low Temperature", "type": "parallel_1", "details_type": "text",
+      "details": "Room 1: Stay tuned for the detailed schedule!"
+    },
+    {
+      "day": 1, "column": 3, "span": 1, "startTime": "10:40", "endTime": "12:00",
+      "title": "Presentations: High Temperature", "type": "parallel_2", "details_type": "text",
+      "details": "Room 2: Stay tuned for the detailed schedule!"
+    },
+    {
+      "day": 1, "column": 2, "span": 2, "startTime": "12:00", "endTime": "13:30",
+      "title": "Lunch and Networking", "type": "break", "details_type": "text",
+      "details": "Lunch included with registration fee. Provided by the Sheraton Presidente Hotel."
+    },
+    {
+      "day": 1, "column": 2, "span": 1, "startTime": "13:30", "endTime": "15:30",
+      "title": "Presentations: High Temperature", "type": "parallel_2", "details_type": "text",
+      "details": "Room 1: Stay tuned for the detailed schedule!"
+    },
+    {
+      "day": 1, "column": 3, "span": 1, "startTime": "13:30", "endTime": "15:30",
+      "title": "Presentations: High Temperature", "type": "parallel_2", "details_type": "text",
+      "details": "Room 2: Stay tuned for the detailed schedule!"
+    },
+    {
+      "day": 1, "column": 2, "span": 2, "startTime": "15:30", "endTime": "16:00",
+      "title": "Coffee Break", "type": "break", "details_type": "text",
+      "details": "Coffee and snack break. Provided by the Sheraton Presidente Hotel."
+    },
+    {
+      "day": 1, "column": 2, "span": 2, "startTime": "16:00", "endTime": "17:30",
+      "title": "Poster Session", "type": "plenary", "details_type": "text",
+      "details": "Poster session and networking."
+    },
+    {
+      "day": 2, "column": 4, "span": 2, "startTime": "08:30", "endTime": "10:10",
+      "title": "Plenary Sessions", "type": "plenary", "details_type": "presentations",
+      "details": [
+        { "topic": "Role of the Central American Integration System", "presenter": "Ingrid Figueroa Santamaría (to be confirmed)", "affiliation": "Executive Director, SICA" },
+        { "topic": "Geothermal as a social driver", "presenter": "Stephanie Daboub Kattan", "affiliation": "Executive Director FUNDAGEO" },
+        { "topic": "Past, present, and future of geothermal energy in Honduras", "presenter": "Dr. Wilfredo Flores", "affiliation": "Secretary Commissioner CREE of Honduras" },
+        { "topic": "Past, present, and future of geothermal energy in Costa Rica", "presenter": "Mr. Adolfo Castillo Bolaños (to be confirmed)", "affiliation": "Coordinator, Geothermal Sources, Costa Rican Institute of Electricity ICE" },
+        { "topic": "Past, present, and future of geothermal energy in Colombia", "presenter": "Ms. Maria Alejandra Socarras Moreno", "affiliation": "Coordinator of the alternative and sustainable energies group, Ministry of Mines and Energy of Colombia" }
+      ]
+    },
+    {
+      "day": 2, "column": 4, "span": 2, "startTime": "10:10", "endTime": "10:40",
+      "title": "Coffee Break", "type": "break", "details_type": "text",
+      "details": "Coffee and snack break. Provided by the Sheraton Presidente Hotel."
+    },
+    {
+      "day": 2, "column": 4, "span": 1, "startTime": "10:40", "endTime": "12:00",
+      "title": "Presentations: Low Temperature", "type": "parallel_1", "details_type": "text",
+      "details": "Room 1: Stay tuned for the detailed schedule!"
+    },
+    {
+      "day": 2, "column": 5, "span": 1, "startTime": "10:40", "endTime": "12:00",
+      "title": "Presentations: High Temperature", "type": "parallel_2", "details_type": "text",
+      "details": "Room 2: Stay tuned for the detailed schedule!"
+    },
+    {
+      "day": 2, "column": 4, "span": 2, "startTime": "12:00", "endTime": "13:30",
+      "title": "Lunch and Networking", "type": "break", "details_type": "text",
+      "details": "Lunch included with registration fee. Provided by the Sheraton Presidente Hotel."
+    },
+    {
+      "day": 2, "column": 4, "span": 1, "startTime": "13:30", "endTime": "15:30",
+      "title": "Presentations: High Temperature", "type": "parallel_2", "details_type": "text",
+      "details": "Room 1: Stay tuned for the detailed schedule!"
+    },
+    {
+      "day": 2, "column": 5, "span": 1, "startTime": "13:30", "endTime": "15:30",
+      "title": "Presentations: High Temperature", "type": "parallel_2", "details_type": "text",
+      "details": "Room 2: Stay tuned for the detailed schedule!"
+    },
+    {
+      "day": 2, "column": 4, "span": 1, "startTime": "15:30", "endTime": "16:00",
+      "title": "50 years of Ahuachapán", "type": "plenary", "details_type": "text",
+      "details": "Focus session: technical presentations for the 50th anniversary of the Ahuachapán geothermal power plant."
+    },
+    {
+      "day": 2, "column": 5, "span": 1, "startTime": "15:30", "endTime": "16:00",
+      "title": "50 years of Ahuachapán", "type": "plenary", "details_type": "text",
+      "details": "Focus session: technical presentations for the 50th anniversary of the Ahuachapán geothermal power plant."
+    },
+    {
+      "day": 2, "column": 4, "span": 2, "startTime": "16:00", "endTime": "17:30",
+      "title": "Poster Session and Coffee", "type": "plenary", "details_type": "text",
+      "details": "Poster session and networking."
+    },
+    {
+      "day": 3, "column": 6, "span": 2, "startTime": "08:30", "endTime": "09:10",
+      "title": "Plenary Sessions", "type": "plenary", "details_type": "presentations",
+      "details": [
+        { "topic": "Keynote presentation: 50 years of Ahuachapán", "presenter": "Marlene Elias de Quan", "affiliation": "General Manager LAGEO" },
+        { "topic": "Keynote presentation: Geothermal in USA/Canada", "presenter": "Bryant Jones", "affiliation": "Executive Director Geothermal Rising" }
+      ]
+    },
+    {
+      "day": 3, "column": 6, "span": 2, "startTime": "09:10", "endTime": "10:05",
+      "title": "Panel 1", "type": "parallel_1", "details_type": "text",
+      "details": ""
+    },
+    {
+      "day": 3, "column": 6, "span": 2, "startTime": "10:05", "endTime": "11:00",
+      "title": "Panel 2", "type": "parallel_2", "details_type": "text",
+      "details": ""
+    },
+    {
+      "day": 3, "column": 6, "span": 2, "startTime": "11:00", "endTime": "12:00",
+      "title": "Panel 3", "type": "parallel_1", "details_type": "text",
+      "details": ""
+    },
+    {
+      "day": 3, "column": 6, "span": 1, "startTime": "12:00", "endTime": "13:10",
+      "title": "Lunch and Networking", "type": "break", "details_type": "text",
+      "details": "Lunch included with registration fee. Provided by the Sheraton Presidente Hotel."
+    },
+    {
+      "day": 3, "column": 6, "span": 1, "startTime": "13:10", "endTime": "16:00",
+      "title": "Working Groups:<br>Geothermal Action Network/ Red de Acción Geotérmica (RAG)", "type": "plenary", "details_type": "text",
+      "details": "Teams of the Geothermal Action Network (RAG).\nThe RAG will promote regional technical cooperation. \nDuring the congress, participants will join different working groups. In each group, we will have 90 minutes of discussion, culminating in the drafting of 3 Action Strategies for Latin America. The drafted strategies will be discussed in a plenary session to become part of the final congress declaration. \nThe goal is ambitious: The teams will meet virtually every 6 months to advance concrete objectives defined during the congress. At the next congress (in 3 years!), the teams will present tangible results of this regional cooperation and propose larger-scale initiatives."
+    },
+    {
+      "day": 3, "column": 6, "span": 1, "startTime": "16:00", "endTime": "16:30",
+      "title": "Coffee Break", "type": "break", "details_type": "text",
+      "details": "Coffee and snack break. Provided by the Sheraton Presidente Hotel."
+    },
+    {
+      "day": 3, "column": 7, "span": 1, "startTime": "12:00", "endTime": "12:20",
+      "title": "Lunch", "type": "break", "details_type": "text",
+      "details": "Lunch included with registration fee. Provided by the Sheraton Presidente Hotel."
+    },
+    {
+      "day": 3, "column": 7, "span": 1, "startTime": "12:20", "endTime": "16:30",
+      "title": "SEEQUENT Workshop (Limited seats, under registration only)", "type": "panel", "details_type": "text",
+      "details": "Workshop by SEEQUENT\n\nIntegrated Geothermal Modelling - Modern Workflows and Case Studies,\n\nOptimizing a geothermal development requires a robust understanding of the resource throughout its life cycle. Combining insights from geology, geochemistry, geophysics, reservoir and facilities engineering, this workshop provides a step-by-step guide on how to execute a holistic geothermal asset development workflow. This workshop will also focus on how digital technologies can assist in breaking down silos between multi-faceted disciplines, improve collaboration, and positively impact asset generation, and commercial outcomes.\nAttendees will learn about the theory behind the technology as well as its direct application. They will also be provided with global examples of where the demonstrated workflows have been applied successfully."
+    },
+    {
+      "day": 3, "column": 6, "span": 2, "startTime": "16:30", "endTime": "17:30",
+      "title": "Closing Plenary", "type": "plenary", "details_type": "text",
+      "details": "• Vote on the key points of the declaration for geothermal energy in Latin America.\n• Awards for best presentations, posters, and panels.\n• Closing speech of the congress."
+    },
+    {
+      "day": 4, "column": 9, "span": 1, "startTime": "08:30", "endTime": "14:30",
+      "title": "BGR Closed Technical Session: GTG Roundtable UNFC", "type": "other", "details_type": "text",
+      "details": "BGR Closed Technical Session: GTG Roundtable UNFC"
+    },
+    {
+      "day": 4, "column": 8, "span": 2, "startTime": "14:30", "endTime": "17:30",
+      "title": "BGR technical session:\nntroduction to UNFC (Limited seats, under registration only)", "type": "panel", "details_type": "text",
+      "details": "BGR Technical Session: Introduction to the United Nations Framework Classification."
+    },
+    {
+      "day": 4, "column": 8, "span": 1, "startTime": "08:30", "endTime": "14:30",
+      "title": "AHUACHAPÁN Field Trip (Limited seats, under registration only)", "type": "social", "details_type": "text",
+      "details": "Technical visit to the Ahuachapán geothermal power plant on it's 50th anniversary.\n\n Unlock the secrets of resilient and sustainable geothermal energy! \n LAGEO is hosting a special guided tour of the Ahuachapán power plant, and you're invited. See the historic first UI turbine and witness the unique craft of candle manufacturing at the AH-8 well. Logistics are still being finalized. Don't miss out, register your interest now to get priority updates and reserve your place!\n\n Intinerary:\n-Departure from Hotel----------6:15am\n-Arrival at Ahuachapán-----------9:00am\n-Plant, field and direct uses visit-----------9am to 12pm\n-Lunch-----------12:30pm\n-Departure to San Salvador-----------2:00pm\n-Arrival at LAGEO-----------4:30pm \n\n Reccomendations to bring:\n- Safety (or at least closed) shoes\n- Clothing appropriate for field-trip\n- Hat, Sunscreen, Sunglasses\n\n Breakfast,lunch boxes, and water and soft drinks will be provided."
+    } 
+  ]
+}

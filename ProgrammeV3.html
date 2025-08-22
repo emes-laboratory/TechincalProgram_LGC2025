@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LGC2025 Technical Program</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Basic Setup & Fonts --- */
+        :root {
+            --color-primary: #4f0096;
+            --color-secondary: #333;
+            --color-background: #f9f9f9;
+            --color-surface: #ffffff;
+            --font-main: 'League Spartan', sans-serif;
+        }
+        body {
+            font-family: var(--font-main);
+            background-color: var(--color-background);
+            color: var(--color-secondary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .main-container {
+            width: 100%;
+            max-width: 1400px;
+            position: relative; /* Needed for popover positioning */
+        }
+        h1 {
+            text-align: center;
+            color: var(--color-primary);
+            font-weight: 700;
+            font-size: 2.5em;
+            margin-bottom: 25px;
+            font-style: italic; /* THIS IS THE CORRECT STYLE RULE */
+        }
+
+        /* --- Schedule Grid (Largely Unchanged) --- */
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: 80px repeat(8, 1fr);
+            gap: 4px 8px;
+            background-color: var(--color-surface);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .grid-item {
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 600;
+            min-height: 40px;
+            font-size: 1em;
+            line-height: 1.2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .time-label, .day-label {
+            background-color: transparent;
+            color: #555;
+            font-weight: 700;
+        }
+        .day-label { grid-row: 1; font-size: 1.1em; padding: 20px 10px; }
+        .time-label { align-items: flex-start; padding-top: 5px; }
+
+        /* --- Session Styling --- */
+        .session {
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .session:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            z-index: 10;
+        }
+        /* Highlight the active session */
+        .session.active {
+            box-shadow: 0 0 0 3px var(--color-primary);
+            transform: scale(1.03);
+            z-index: 11;
+        }
+
+        /* --- NEW POPOVER BUBBLE STYLES --- */
+        .session-popover {
+            position: absolute; /* Crucial for positioning */
+            display: none;      /* Hidden by default */
+            background-color: var(--color-surface);
+            color: var(--color-secondary);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            padding: 20px;
+            width: 350px;
+            max-width: 90vw;
+            z-index: 1000;
+            font-size: 0.9em;
+            line-height: 1.5;
+            text-align: left;
+            white-space: pre-wrap; /* Respects line breaks from data */
+        }
+        /* The little triangle/arrow pointing to the session */
+        .session-popover::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+        /* Arrow pointing up (when popover is below the item) */
+        .session-popover.arrow-top::after {
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 0 10px 10px 10px;
+            border-color: transparent transparent var(--color-surface) transparent;
+        }
+        /* Arrow pointing down (when popover is above the item) */
+        .session-popover.arrow-bottom::after {
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 10px 10px 0 10px;
+            border-color: var(--color-surface) transparent transparent transparent;
+        }
+        .popover-title {
+            font-weight: 700;
+            font-size: 1.2em;
+            color: var(--color-primary);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* --- Color Palette (Unchanged) --- */
+        .type-plenary   { background-color: #4f0096; color: white; }
+        .type-parallel_1{ background-color: #fed702; color: #4f0096; }
+        .type-parallel_2{ background-color: #f231bf; color: white; }
+        .type-panel     { background-color: #ff3300; color: white; }
+        .type-break     { background-color: #4ea72e; color: white; }
+        .type-social    { background-color: #00b5ed; color: #4f0096; }
+
+        /* --- MOBILE RESPONSIVE STYLES (Unchanged Logic, styling adapted) --- */
+        @media (max-width: 800px) {
+            h1 { font-size: 1.8em; }
+            .schedule-grid { display: flex; flex-direction: column; gap: 15px; }
+            .time-label, .day-label.desktop-only { display: none; }
+            .grid-item { grid-column: auto !important; grid-row: auto !important; }
+            .day-container { display: flex; flex-direction: column; gap: 8px; }
+            .day-header-mobile { display: block; text-align: center; font-size: 1.5em; font-weight: 700; color: var(--color-primary); padding: 15px 0; border-bottom: 2px solid var(--color-primary); margin-bottom: 10px; }
+            .session { padding: 15px; }
+            .session:hover, .session.active { transform: none; box-shadow: none; }
+            .session.active { box-shadow: 0 0 0 3px var(--color-primary); }
+        }
+        .day-header-mobile { display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <h1>LGC2025 TECHNICAL PROGRAM</h1>
+
+        <div class="schedule-grid" id="schedule-container">
+            <!-- The schedule will be dynamically generated here -->
+        </div>
+
+        <!-- THE NEW POPOVER ELEMENT -->
+        <div id="session-popover" class="session-popover">
+            <!-- Popover content will be injected here by JavaScript -->
+        </div>
+    </div>
+    
+    <!-- Load the data first if using the "No Server" method -->
+    <!-- <script src="schedule_data.js"></script> -->
+    
+    <!-- The script that builds the schedule (now with popover logic) -->
+    <script src="schedule_builder.js"></script>
+
+</body>
+</html>
