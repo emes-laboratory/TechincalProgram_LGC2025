@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* --- Basic Setup & Fonts --- */
         :root {
             --color-primary: #4f0096;
             --color-secondary: #333;
@@ -29,7 +28,7 @@
         .main-container {
             width: 100%;
             max-width: 1400px;
-            position: relative; /* Needed for popover positioning */
+            position: relative;
         }
         h1 {
             text-align: center;
@@ -40,16 +39,7 @@
             font-style: italic;
         }
 
-        /* --- Schedule Grid (Desktop) --- */
-        .schedule-grid {
-            display: grid;
-            grid-template-columns: 80px repeat(8, 1fr);
-            gap: 4px 8px;
-            background-color: var(--color-surface);
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
+        /* --- Base Grid Item & Session Styling (Shared) --- */
         .grid-item {
             padding: 10px;
             border-radius: 4px;
@@ -62,19 +52,23 @@
             justify-content: center;
             align-items: center;
         }
-        .time-label, .day-label {
-            background-color: transparent;
-            color: #555;
-            font-weight: 700;
-        }
-        .day-label { grid-row: 1; font-size: 1.1em; padding: 20px 10px; }
-        .time-label { align-items: flex-start; padding-top: 5px; }
-
-        /* --- Session Styling --- */
         .session {
             cursor: pointer;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
+
+        /* --- Desktop Grid Container & Styles --- */
+        #schedule-container-desktop {
+            display: grid;
+            grid-template-columns: 80px repeat(8, 1fr);
+            gap: 4px 8px;
+            background-color: var(--color-surface);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .day-label { grid-row: 1; font-size: 1.1em; padding: 20px 10px; background: transparent; color: #555; font-weight: 700; }
+        .time-label { align-items: flex-start; padding-top: 5px; background: transparent; color: #555; font-weight: 700; }
         .session:hover {
             transform: scale(1.02);
             box-shadow: 0 5px 20px rgba(0,0,0,0.15);
@@ -85,115 +79,45 @@
             transform: scale(1.03);
             z-index: 11;
         }
-
-        /* --- Popover Bubble --- */
-        .session-popover {
-            position: absolute;
-            display: none;
-            background-color: var(--color-surface);
-            color: var(--color-secondary);
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-            padding: 20px;
-            width: 350px;
-            max-width: 90vw;
-            z-index: 1000;
-            font-size: 0.9em;
-            line-height: 1.5;
-            text-align: left;
-            white-space: pre-wrap;
+        
+        /* --- Mobile Column Container & Styles --- */
+        #schedule-container-mobile {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            gap: 10px;
         }
-        .session-popover::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 0;
-            border-style: solid;
-        }
-        .session-popover.arrow-top::after {
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border-width: 0 10px 10px 10px;
-            border-color: transparent transparent var(--color-surface) transparent;
-        }
-        .session-popover.arrow-bottom::after {
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            border-width: 10px 10px 0 10px;
-            border-color: var(--color-surface) transparent transparent transparent;
-        }
-        .popover-title {
+        .mobile-day-header {
+            text-align: center;
+            font-size: 1.5em;
             font-weight: 700;
-            font-size: 1.2em;
             color: var(--color-primary);
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+            border-bottom: 2px solid var(--color-primary);
+            margin: 15px 0 5px 0;
+        }
+        #schedule-container-mobile .session {
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        #schedule-container-mobile .session.active {
+             box-shadow: 0 0 0 3px var(--color-primary);
         }
 
-        /* --- Color Palette --- */
-        .type-plenary   { background-color: #4f0096; color: white; }
-        .type-parallel_1{ background-color: #fed702; color: #4f0096; }
-        .type-parallel_2{ background-color: #f231bf; color: white; }
-        .type-panel     { background-color: #ff3300; color: white; }
-        .type-break     { background-color: #4ea72e; color: white; }
-        .type-social    { background-color: #00b5ed; color: #4f0096; }
 
-        /* --- HIDE MOBILE-ONLY ELEMENTS ON DESKTOP --- */
-        .day-header-mobile {
-            display: none;
-        }
+        /* --- Popover (Unchanged) --- */
+        .session-popover{position:absolute;display:none;background-color:var(--color-surface);color:var(--color-secondary);border:1px solid #ddd;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,0.2);padding:20px;width:350px;max-width:90vw;z-index:1000;font-size:.9em;line-height:1.5;text-align:left;white-space:pre-wrap}.session-popover::after{content:'';position:absolute;width:0;height:0;border-style:solid}.session-popover.arrow-top::after{bottom:100%;left:50%;transform:translateX(-50%);border-width:0 10px 10px;border-color:transparent transparent var(--color-surface)}.session-popover.arrow-bottom::after{top:100%;left:50%;transform:translateX(-50%);border-width:10px 10px 0;border-color:var(--color-surface) transparent transparent}.popover-title{font-weight:700;font-size:1.2em;color:var(--color-primary);margin-bottom:15px;padding-bottom:10px;border-bottom:1px solid #eee}
 
-        /* --- MOBILE RESPONSIVE STYLES --- */
+        /* --- Color Palette (Unchanged) --- */
+        .type-plenary{background-color:#4f0096;color:#fff}.type-parallel_1{background-color:#fed702;color:#4f0096}.type-parallel_2{background-color:#f231bf;color:#fff}.type-panel{background-color:#ff3300;color:#fff}.type-break{background-color:#4ea72e;color:#fff}.type-social{background-color:#00b5ed;color:#4f0096}
+
+        /* --- THE RESPONSIVE SWITCH --- */
         @media (max-width: 800px) {
             h1 { font-size: 1.8em; }
-            
-            /* Switch grid to a flex column for mobile */
-            .schedule-grid {
-                display: flex;
-                flex-direction: column;
-                gap: 15px;
+            #schedule-container-desktop {
+                display: none; /* HIDE desktop view */
             }
-            
-            /* THE FIX: Hide the desktop-only grid labels */
-            .time-label, .day-label.desktop-only {
-                display: none;
-            }
-            
-            /* Unset grid positioning for sessions */
-            .grid-item {
-                grid-column: auto !important;
-                grid-row: auto !important;
-            }
-            
-            /* THE FIX: Show the mobile-only day headers */
-            .day-header-mobile {
-                display: block;
-                text-align: center;
-                font-size: 1.5em;
-                font-weight: 700;
-                color: var(--color-primary);
-                padding: 15px 0;
-                border-bottom: 2px solid var(--color-primary);
-                margin-bottom: 10px;
-            }
-
-            /* Adjust session padding for better touch targets */
-            .session {
-                padding: 15px;
-            }
-            
-            /* Disable hover effects on mobile */
-            .session:hover, .session.active {
-                transform: none;
-                box-shadow: none;
-            }
-
-            .session.active {
-                box-shadow: 0 0 0 3px var(--color-primary);
+            #schedule-container-mobile {
+                display: flex; /* SHOW mobile view */
             }
         }
     </style>
@@ -203,19 +127,17 @@
     <div class="main-container">
         <h1>LGC2025 TECHNICAL PROGRAM</h1>
 
-        <div class="schedule-grid" id="schedule-container">
-            <!-- The schedule will be dynamically generated here -->
-        </div>
+        <!-- Desktop View Container (Visible on large screens) -->
+        <div id="schedule-container-desktop"></div>
 
-        <div id="session-popover" class="session-popover">
-            <!-- Popover content will be injected here by JavaScript -->
-        </div>
+        <!-- Mobile View Container (Visible on small screens) -->
+        <div id="schedule-container-mobile"></div>
+
+        <!-- Popover Element (Used by both views) -->
+        <div id="session-popover" class="session-popover"></div>
     </div>
     
-    <!-- Load the data file -->
     <script src="schedule-data.js"></script>
-    
-    <!-- Load the script that builds the schedule -->
     <script src="schedule-builder.js"></script>
 
 </body>
