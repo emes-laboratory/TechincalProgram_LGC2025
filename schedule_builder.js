@@ -2,11 +2,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- DOM Element References ---
     const scheduleContainer = document.getElementById('schedule-container');
     const popover = document.getElementById('session-popover');
+    const overlay = document.getElementById('popover-overlay');
     
     // --- State Variables ---
     let activeSession = null;
     let scheduleData = null;
-    let timeToRowMap = {}; // Object to map time strings to grid row numbers
+    let timeToRowMap = {}; 
 
     /**
      * Main initialization function.
@@ -17,22 +18,18 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
             scheduleData = await response.json();
             
-            // Gather all unique time points from the predefined slots and all sessions.
             const allTimes = new Set(scheduleData.time_slots);
             scheduleData.sessions.forEach(session => {
                 allTimes.add(session.startTime);
                 allTimes.add(session.endTime);
             });
             
-            // Create the master timeline by sorting all unique time points.
             scheduleData.time_slots = Array.from(allTimes).sort();
 
-            // Create the mapping from a time string (e.g., "10:05") to a grid row number.
             scheduleData.time_slots.forEach((time, index) => {
-                timeToRowMap[time] = index + 2; // Row 1 is for day headers
+                timeToRowMap[time] = index + 2; 
             });
 
-            // Set up initial view and listen for window resizing.
             handleResize();
             window.addEventListener('resize', handleResize);
             
@@ -43,24 +40,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /**
-     * --- CORRECTED FUNCTION ---
-     * Formats session details for the popover, now safely handling different data types.
+     * Formats session details safely.
      */
     function formatDetails(session) {
-        // 1. Check if details exist at all.
-        if (!session.details) {
-            return 'Details coming soon.';
-        }
-        
-        // 2. Handle specific cases of "empty" based on the data type.
-        if (session.details_type === 'text' && typeof session.details === 'string' && session.details.trim() === "") {
-            return 'Details coming soon.';
-        }
-        if (session.details_type === 'presentations' && Array.isArray(session.details) && session.details.length === 0) {
-            return 'Details coming soon.';
-        }
+        if (!session.details) return 'Details coming soon.';
+        if (session.details_type === 'text' && typeof session.details === 'string' && session.details.trim() === "") return 'Details coming soon.';
+        if (session.details_type === 'presentations' && Array.isArray(session.details) && session.details.length === 0) return 'Details coming soon.';
 
-        // 3. Proceed with formatting now that we know we have valid data.
         switch (session.details_type) {
             case 'presentations':
                 return session.details.map(p => `• <b>${p.topic}</b>\n  <i>${p.presenter} (${p.affiliation})</i>`).join('\n\n');
@@ -69,10 +55,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 const moderator = `<b>Moderator:</b>\n  <i>${session.details.moderator.name} (${session.details.moderator.affiliation})</i>`;
                 const panelists = session.details.panelists.map(p => `  - ${p.name} (${p.affiliation})`).join('\n');
                 return `${moderator}\n\n<b>Panelists:</b>\n${panelists}`;
-            case 'text':
-                return session.details;
-            default:
-                return 'Details coming soon.';
+            case 'text': return session.details;
+            default: return 'Details coming soon.';
         }
     }
 
@@ -104,20 +88,13 @@ document.addEventListener('DOMContentLoaded', function () {
             const sessionEl = document.createElement('div');
             sessionEl.className = `grid-item session type-${sessionData.type}`;
             sessionEl.style.gridColumn = `${sessionData.column} / span ${sessionData.span}`;
-            
             const startRow = timeToRowMap[sessionData.startTime];
             const endRow = timeToRowMap[sessionData.endTime];
-            
-            if (!startRow || !endRow) {
-                console.warn('Session has an invalid time and cannot be placed:', sessionData.title);
-                return; 
-            }
+            if (!startRow || !endRow) return;
             sessionEl.style.gridRow = `${startRow} / ${endRow}`;
-
             sessionEl.innerHTML = sessionData.title;
             sessionEl.setAttribute('tabindex', '0');
             sessionEl.dataset.title = sessionData.title;
-            // This now calls the corrected, safe function.
             sessionEl.dataset.details = formatDetails(sessionData);
             grid.appendChild(sessionEl);
         });
@@ -162,12 +139,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /**
-     * Adds event listeners for opening/closing the popover.
+     * Adds event listeners.
      */
     function addInteractivity() {
         scheduleContainer.querySelectorAll('.session').forEach(session => {
             const openPopover = (event) => {
-                // This check is now safe because formatDetails always returns a string.
                 if (session.dataset.details === 'Details coming soon.') return;
                 event.stopPropagation();
                 showPopover(session);
@@ -175,13 +151,15 @@ document.addEventListener('DOMContentLoaded', function () {
             session.addEventListener('click', openPopover);
             session.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openPopover(e); });
         });
-        document.addEventListener('click', () => hidePopover());
+        
+        // Add listeners to close the popover
+        overlay.addEventListener('click', hidePopover);
         document.addEventListener('keydown', e => { if (e.key === 'Escape') hidePopover(); });
-        popover.addEventListener('click', e => e.stopPropagation());
+        popover.addEventListener('click', e => e.stopPropagation()); // Prevent clicks inside popover from closing it
     }
 
     /**
-     * Displays and positions the popover.
+     * Displays the popover and overlay.
      */
     function showPopover(sessionEl) {
         if (activeSession) activeSession.classList.remove('active');
@@ -195,12 +173,13 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
         popover.querySelector('.popover-close').addEventListener('click', hidePopover);
         
+        overlay.style.display = 'block';
         popover.style.display = 'flex';
         positionPopover(sessionEl);
     }
 
     /**
-     * Hides the popover.
+     * Hides the popover and overlay.
      */
     function hidePopover() {
         if (!activeSession) return;
@@ -208,43 +187,62 @@ document.addEventListener('DOMContentLoaded', function () {
         activeSession.focus(); 
         activeSession = null;
         popover.style.display = 'none';
+        overlay.style.display = 'none';
     }
 
     /**
-     * Intelligently positions the popover to be fully visible and scrollable.
+     * --- FINAL, ROBUST POSITIONING LOGIC ---
      */
     function positionPopover(targetElement) {
+        // On mobile, the CSS handles everything. We don't need to run any JS positioning.
+        if (window.innerWidth <= 800) {
+            return;
+        }
+
+        // --- Desktop Positioning Logic ---
         const rect = targetElement.getBoundingClientRect();
+        const margin = 15; // Space from window edge
+
+        // Reset styles to measure natural size
+        popover.style.transform = '';
+        popover.style.top = '';
+        popover.style.left = '';
+        popover.style.maxHeight = '';
         const popoverHeight = popover.offsetHeight;
         const popoverWidth = popover.offsetWidth;
-        const margin = 10;
 
+        // Horizontal positioning: center it, then clamp it so it's never off-screen.
         let left = rect.left + (rect.width / 2) - (popoverWidth / 2);
-        
-        const spaceBelow = window.innerHeight - rect.bottom;
-        const spaceAbove = rect.top;
+        left = Math.max(margin, Math.min(left, window.innerWidth - popoverWidth - margin));
 
-        let top;
-        if (spaceBelow >= popoverHeight || spaceBelow > spaceAbove) {
-            top = rect.bottom + 5;
-            popover.style.maxHeight = `${window.innerHeight - rect.bottom - margin * 2}px`;
-        } else {
-            top = rect.top - popoverHeight - 5;
-            popover.style.maxHeight = `${rect.top - margin * 2}px`;
+        // Vertical positioning: check space above and below.
+        const spaceBelow = window.innerHeight - rect.bottom - margin;
+        const spaceAbove = rect.top - margin;
+
+        // If it fits perfectly below, place it there.
+        if (popoverHeight <= spaceBelow) {
+            popover.style.top = `${rect.bottom + 5}px`;
+        } 
+        // Else if it fits perfectly above, place it there.
+        else if (popoverHeight <= spaceAbove) {
+            popover.style.top = `${rect.top - popoverHeight - 5}px`;
+        } 
+        // Otherwise, it must be constrained. Place it where there's more room.
+        else {
+            if (spaceBelow > spaceAbove) {
+                popover.style.top = `${rect.bottom + 5}px`;
+                popover.style.maxHeight = `${spaceBelow - 5}px`;
+            } else {
+                popover.style.top = `${margin}px`;
+                popover.style.maxHeight = `${spaceAbove}px`;
+            }
         }
         
-        if (left < margin) left = margin;
-        if (left + popoverWidth > window.innerWidth - margin) {
-            left = window.innerWidth - popoverWidth - margin;
-        }
-        if (top < margin) top = margin;
-
-        popover.style.top = `${top}px`;
         popover.style.left = `${left}px`;
     }
 
     /**
-     * Checks window size and calls the appropriate build function.
+     * Handles window resizing to switch between mobile and desktop views.
      */
     function handleResize() {
         const isMobile = window.innerWidth <= 800;
@@ -254,10 +252,4 @@ document.addEventListener('DOMContentLoaded', function () {
             buildMobileView();
         } else if (!isMobile && currentView !== 'desktop') {
             scheduleContainer.dataset.view = 'desktop';
-            buildDesktopView();
-        }
-    }
-    
-    // --- Start the application ---
-    initializeSchedule();
-});
+          
