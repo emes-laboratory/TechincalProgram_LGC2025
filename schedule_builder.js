@@ -252,4 +252,10 @@ document.addEventListener('DOMContentLoaded', function () {
             buildMobileView();
         } else if (!isMobile && currentView !== 'desktop') {
             scheduleContainer.dataset.view = 'desktop';
-          
+            buildDesktopView();
+        }
+    }
+    
+    // --- Start the application ---
+    initializeSchedule();
+});
