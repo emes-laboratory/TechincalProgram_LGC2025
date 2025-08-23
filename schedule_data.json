@@ -28,12 +28,12 @@
     },
     {
       "day": 1, "column": 2, "span": 1, "startTime": "10:40", "endTime": "12:00",
-      "title": "Presentations: Low Temperature", "type": "parallel_1", "details_type": "text",
+      "title": "Technical Presentations: Room 1", "type": "parallel_1", "details_type": "text",
       "details": "Room 1: Stay tuned for the detailed schedule!"
     },
     {
       "day": 1, "column": 3, "span": 1, "startTime": "10:40", "endTime": "12:00",
-      "title": "Presentations: High Temperature", "type": "parallel_2", "details_type": "text",
+      "title": "Technical  Presentations: Room 2", "type": "parallel_2", "details_type": "text",
       "details": "Room 2: Stay tuned for the detailed schedule!"
     },
     {
@@ -43,12 +43,12 @@
     },
     {
       "day": 1, "column": 2, "span": 1, "startTime": "13:30", "endTime": "15:30",
-      "title": "Presentations: High Temperature", "type": "parallel_2", "details_type": "text",
+      "title": "Technical Presentations: Room 1", "type": "parallel_1", "details_type": "text",
       "details": "Room 1: Stay tuned for the detailed schedule!"
     },
     {
       "day": 1, "column": 3, "span": 1, "startTime": "13:30", "endTime": "15:30",
-      "title": "Presentations: High Temperature", "type": "parallel_2", "details_type": "text",
+      "title": "Technical Presentations: Room 2", "type": "parallel_2", "details_type": "text",
       "details": "Room 2: Stay tuned for the detailed schedule!"
     },
     {
@@ -79,12 +79,12 @@
     },
     {
       "day": 2, "column": 4, "span": 1, "startTime": "10:40", "endTime": "12:00",
-      "title": "Presentations: Low Temperature", "type": "parallel_1", "details_type": "text",
+      "title": "Technical Presentations: Room 1", "type": "parallel_1", "details_type": "text",
       "details": "Room 1: Stay tuned for the detailed schedule!"
     },
     {
       "day": 2, "column": 5, "span": 1, "startTime": "10:40", "endTime": "12:00",
-      "title": "Presentations: High Temperature", "type": "parallel_2", "details_type": "text",
+      "title": "Technical Presentations: Room 2", "type": "parallel_2", "details_type": "text",
       "details": "Room 2: Stay tuned for the detailed schedule!"
     },
     {
@@ -94,12 +94,12 @@
     },
     {
       "day": 2, "column": 4, "span": 1, "startTime": "13:30", "endTime": "15:30",
-      "title": "Presentations: High Temperature", "type": "parallel_2", "details_type": "text",
+      "title": "Technical Presentations: Room 1", "type": "parallel_1", "details_type": "text",
       "details": "Room 1: Stay tuned for the detailed schedule!"
     },
     {
       "day": 2, "column": 5, "span": 1, "startTime": "13:30", "endTime": "15:30",
-      "title": "Presentations: High Temperature", "type": "parallel_2", "details_type": "text",
+      "title": "Technical Presentations: Room 2", "type": "parallel_2", "details_type": "text",
       "details": "Room 2: Stay tuned for the detailed schedule!"
     },
     {
@@ -126,12 +126,12 @@
       ]
     },
     {
-      "day": 3, "column": 6, "span": 2, "startTime": "09:10", "endTime": "10:05",
+      "day": 3, "column": 6, "span": 2, "startTime": "09:10", "endTime": "10:10",
       "title": "Panel 1", "type": "parallel_1", "details_type": "text",
       "details": ""
     },
     {
-      "day": 3, "column": 6, "span": 2, "startTime": "10:05", "endTime": "11:00",
+      "day": 3, "column": 6, "span": 2, "startTime": "10:10", "endTime": "11:00",
       "title": "Panel 2", "type": "parallel_2", "details_type": "text",
       "details": ""
     },
