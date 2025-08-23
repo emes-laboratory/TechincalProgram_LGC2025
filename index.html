@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LGC2025 Technical Program</title>
+    <title></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700&display=swap" rel="stylesheet">
+    <!-- MODIFIED: Added Museo Slab (300) and Roboto Slab (300) -->
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&family=Museo+Slab:wght@300&family=Roboto+Slab:wght@300&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -14,10 +15,15 @@
             --color-secondary: #333;
             --color-background: #f9f9f9;
             --color-surface: #ffffff;
-            --font-main: 'League Spartan', sans-serif;
+            /* MODIFIED: Defined all fonts for easier management */
+            --font-body: 'Museo Slab', serif;
+            --font-heading: 'League Spartan', sans-serif;
+            --font-description: 'Roboto Slab', serif;
         }
         body {
-            font-family: var(--font-main);
+            /* MODIFIED: Set body font to Museo Slab Light (300) */
+            font-family: var(--font-body);
+            font-weight: 300;
             background-color: var(--color-background);
             color: var(--color-secondary);
             margin: 0;
@@ -33,6 +39,7 @@
         h1 {
             text-align: center;
             color: var(--color-primary);
+            font-family: var(--font-heading); /* Using League Spartan for the main title too */
             font-weight: 700;
             font-size: 2.5em;
             margin-bottom: 25px;
@@ -53,17 +60,18 @@
             padding: 10px;
             border-radius: 4px;
             text-align: center;
-            font-weight: 600;
             min-height: 40px;
             font-size: 1em;
             line-height: 1.2;
             display: flex;
+            flex-direction: column; /* Allow title and description to stack */
             justify-content: center;
             align-items: center;
         }
         .time-label, .day-label {
             background-color: transparent;
             color: #555;
+            font-family: var(--font-heading); /* Use heading font for labels */
             font-weight: 700;
         }
         .day-label { grid-row: 1; font-size: 1.1em; padding: 20px 10px; }
@@ -84,6 +92,25 @@
             box-shadow: 0 0 0 3px var(--color-primary);
             transform: scale(1.03);
             z-index: 11;
+        }
+        
+        /* --- NEW Stlyes for Session Content --- */
+        /* MODIFIED: Style for the white headings in colored blocks */
+        .session-title {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            text-transform: uppercase; /* Ensures all caps */
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+        
+        /* MODIFIED: Style for the description text below the heading */
+        .session-description {
+            font-family: var(--font-description);
+            font-weight: 300;
+            font-size: 0.9em;
+            /* Reset text-transform in case of inheritance */
+            text-transform: none; 
         }
 
         /* --- Popover & Overlay --- */
@@ -113,6 +140,7 @@
             text-align: left;
         }
         .popover-title {
+            font-family: var(--font-heading); /* Use heading font */
             font-weight: 700;
             font-size: 1.2em;
             color: var(--color-primary);
@@ -158,7 +186,6 @@
             .session:hover, .session.active { transform: none; box-shadow: 0 0 0 3px var(--color-primary); }
             .day-header-mobile { display: block; text-align: center; font-size: 1.5em; color: var(--color-primary); padding: 15px 0; border-bottom: 2px solid var(--color-primary); margin-bottom: 10px; }
             
-            /* --- DEFINITIVE POPOVER CENTERING ON MOBILE --- */
             .session-popover {
                 left: 50%;
                 top: 50%;
