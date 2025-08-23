@@ -1,41 +1,51 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // --- DOM Element References ---
     const scheduleContainer = document.getElementById('schedule-container');
     const popover = document.getElementById('session-popover');
+    
+    // --- State Variables ---
     let activeSession = null;
+    let scheduleData = null;
+    let timeToRowMap = {}; // Object to map time strings to grid row numbers
 
-    // --- Main function to fetch data and build the schedule ---
+    /**
+     * Main initialization function. Fetches data and sets up the page.
+     */
     async function initializeSchedule() {
         try {
-            // Using fetch. If you use the "No Server" method, see the alternative below.
             const response = await fetch('schedule_data.json');
-            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-            const data = await response.json();
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            scheduleData = await response.json();
             
-            window.scheduleData = data; // Make data globally accessible
-            
-            buildGrid(data);
-            addInteractivity();
-            setupMobileView();
-            window.addEventListener('resize', setupMobileView);
+            // Sort time slots to ensure correct order
+            scheduleData.time_slots.sort();
 
+            // *** CRITICAL FIX ***
+            // Create a map from time string to grid row index. This is more reliable than mathematical calculation.
+            // Row 1 is for day headers, so times start on row 2.
+            scheduleData.time_slots.forEach((time, index) => {
+                timeToRowMap[time] = index + 2; 
+            });
+
+            // Set up initial view based on window size and listen for changes
+            handleResize();
+            window.addEventListener('resize', handleResize);
+            
         } catch (error) {
             console.error("Could not load or build schedule:", error);
-            scheduleContainer.innerHTML = `<p style="text-align:center; color:red;">Error loading schedule data. Please try again later.</p>`;
+            scheduleContainer.innerHTML = `<p style="text-align:center; color:red;">Error loading schedule data.</p>`;
         }
     }
 
-    // --- Helper function to calculate grid row based on time (Unchanged) ---
-    const timeToRow = (timeStr) => {
-        const [hours, minutes] = timeStr.split(':').map(Number);
-        const baseMinutes = 8 * 60 + 30;
-        const currentMinutes = hours * 60 + minutes;
-        const diffInHalfHours = (currentMinutes - baseMinutes) / 30;
-        return 2 + (diffInHalfHours * 6);
-    };
-
-    // --- Helper function to format the details pop-up content (Unchanged) ---
+    /**
+     * Formats the details of a session for display in the popover.
+     * @param {object} session - The session data object.
+     * @returns {string} - Formatted HTML string.
+     */
     function formatDetails(session) {
-        if (!session.details) return '';
+        if (!session.details) return 'Details coming soon.';
         switch (session.details_type) {
             case 'presentations':
                 return session.details.map(p => `• <b>${p.topic}</b>\n  <i>${p.presenter} (${p.affiliation})</i>`).join('\n\n');
@@ -43,67 +53,140 @@ document.addEventListener('DOMContentLoaded', function () {
                 const moderator = `<b>Moderator:</b>\n  <i>${session.details.moderator.name} (${session.details.moderator.affiliation})</i>`;
                 const panelists = session.details.panelists.map(p => `  - ${p.name} (${p.affiliation})`).join('\n');
                 return `${moderator}\n\n<b>Panelists:</b>\n${panelists}`;
-            case 'text': return session.details;
-            default: return '';
+            case 'text':
+                return session.details;
+            default:
+                return 'Details coming soon.';
         }
     }
 
-    // --- Function to build the entire grid from data (Simplified) ---
-    function buildGrid(data) {
-        scheduleContainer.innerHTML = '';
-        const dayHeaderContainer = document.createElement('div');
-        dayHeaderContainer.className = 'grid-item day-label desktop-only';
-        dayHeaderContainer.style.gridColumn = '1';
-        scheduleContainer.appendChild(dayHeaderContainer);
-        Object.values(data.day_columns).forEach(day => {
+    /**
+     * Builds the desktop grid view.
+     */
+    function buildDesktopView() {
+        scheduleContainer.innerHTML = ''; // Clear previous content
+        const grid = document.createElement('div');
+        grid.className = 'schedule-grid';
+        grid.setAttribute('role', 'grid');
+
+        // Add Day Headers
+        Object.values(scheduleData.day_columns).forEach(day => {
             const dayEl = document.createElement('div');
-            dayEl.className = 'grid-item day-label desktop-only';
+            dayEl.className = 'grid-item day-label';
             dayEl.style.gridColumn = `${day.start} / span ${day.span}`;
             dayEl.textContent = day.title;
-            scheduleContainer.appendChild(dayEl);
-        });
-        data.time_slots.forEach(time => {
-            const timeEl = document.createElement('div');
-            timeEl.className = 'time-label';
-            timeEl.style.gridRow = timeToRow(time);
-            timeEl.textContent = time;
-            scheduleContainer.appendChild(timeEl);
+            grid.appendChild(dayEl);
         });
 
-        // Simplified session creation
-        data.sessions.forEach(sessionData => {
+        // Add Time Labels
+        scheduleData.time_slots.forEach(time => {
+            const timeEl = document.createElement('div');
+            timeEl.className = 'grid-item time-label';
+            timeEl.style.gridRow = timeToRowMap[time];
+            timeEl.textContent = time;
+            grid.appendChild(timeEl);
+        });
+
+        // Add Sessions
+        scheduleData.sessions.forEach(sessionData => {
             const sessionEl = document.createElement('div');
             sessionEl.className = `grid-item session type-${sessionData.type}`;
             sessionEl.style.gridColumn = `${sessionData.column} / span ${sessionData.span}`;
-            sessionEl.style.gridRow = `${timeToRow(sessionData.startTime)} / ${timeToRow(sessionData.endTime)}`;
-            sessionEl.dataset.day = sessionData.day;
-            sessionEl.dataset.title = sessionData.title; // Store title for popover
-            // Store details directly on the element
-            sessionEl.dataset.details = formatDetails(sessionData); 
-            sessionEl.innerHTML = sessionData.title; // Use innerHTML for <br>
-            scheduleContainer.appendChild(sessionEl);
+            
+            // Use the time-to-row map for accurate positioning
+            const startRow = timeToRowMap[sessionData.startTime];
+            const endRow = timeToRowMap[sessionData.endTime];
+            if (!startRow || !endRow) {
+                console.warn('Session has invalid start/end time:', sessionData.title);
+                return; // Skip sessions with invalid times
+            }
+            sessionEl.style.gridRow = `${startRow} / ${endRow}`;
+
+            sessionEl.innerHTML = sessionData.title;
+            sessionEl.setAttribute('role', 'gridcell');
+            sessionEl.setAttribute('tabindex', '0'); // Make it focusable
+            
+            // Store data on the element for the popover
+            sessionEl.dataset.title = sessionData.title;
+            sessionEl.dataset.details = formatDetails(sessionData);
+            
+            grid.appendChild(sessionEl);
         });
+
+        scheduleContainer.appendChild(grid);
+        addInteractivity();
+    }
+    
+    /**
+     * Builds the mobile list view.
+     */
+    function buildMobileView() {
+        scheduleContainer.innerHTML = ''; // Clear previous content
+        const mobileContainer = document.createElement('div');
+        mobileContainer.className = 'schedule-grid mobile-view'; // Use grid classes for consistency
+
+        const sessionsByDay = {};
+        scheduleData.sessions.forEach(session => {
+            if (!sessionsByDay[session.day]) {
+                sessionsByDay[session.day] = [];
+            }
+            sessionsByDay[session.day].push(session);
+        });
+
+        Object.keys(sessionsByDay).sort().forEach(dayKey => {
+            // Add Day Header
+            const header = document.createElement('div');
+            header.className = 'day-header-mobile';
+            header.textContent = scheduleData.day_columns[dayKey].title;
+            mobileContainer.appendChild(header);
+
+            // Add Sessions for that day
+            sessionsByDay[dayKey].sort((a, b) => a.startTime.localeCompare(b.startTime)).forEach(sessionData => {
+                const sessionEl = document.createElement('div');
+                sessionEl.className = `session type-${sessionData.type}`;
+                sessionEl.innerHTML = `<b>${sessionData.startTime} - ${sessionData.endTime}</b><br>${sessionData.title}`;
+                sessionEl.setAttribute('role', 'button');
+                sessionEl.setAttribute('tabindex', '0');
+                
+                // Store data for popover
+                sessionEl.dataset.title = sessionData.title;
+                sessionEl.dataset.details = formatDetails(sessionData);
+                
+                mobileContainer.appendChild(sessionEl);
+            });
+        });
+        
+        scheduleContainer.appendChild(mobileContainer);
+        addInteractivity();
     }
 
-    // --- COMPLETELY NEW INTERACTIVITY LOGIC ---
+    /**
+     * Adds click/keyboard listeners to sessions and the popover.
+     */
     function addInteractivity() {
-        const sessions = scheduleContainer.querySelectorAll('.session');
-
-        sessions.forEach(session => {
-            session.addEventListener('click', (event) => {
-                event.stopPropagation(); // Prevent click from closing the popover immediately
-                const details = session.dataset.details;
-                if (!details.trim()) return; // Do nothing if no details
-
+        scheduleContainer.querySelectorAll('.session').forEach(session => {
+            const openPopover = (event) => {
+                // Don't open for empty details
+                if (!session.dataset.details || session.dataset.details.trim() === 'Details coming soon.') return;
+                
+                event.stopPropagation();
                 if (activeSession === session) {
                     hidePopover();
                 } else {
                     showPopover(session);
                 }
+            };
+
+            session.addEventListener('click', openPopover);
+            session.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    openPopover(event);
+                }
             });
         });
 
-        // Close popover if clicking anywhere else on the page
+        // Close popover if clicking outside of it
         document.addEventListener('click', (event) => {
             if (popover.style.display === 'block' && !popover.contains(event.target)) {
                 hidePopover();
@@ -111,99 +194,93 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    function showPopover(session) {
-        // Deactivate previous session
+    /**
+     * Displays and positions the popover for a given session.
+     * @param {HTMLElement} sessionEl - The session element that was clicked.
+     */
+    function showPopover(sessionEl) {
         if (activeSession) {
             activeSession.classList.remove('active');
         }
-
-        // Activate new session
-        activeSession = session;
+        activeSession = sessionEl;
         activeSession.classList.add('active');
         
-        // Populate popover content
-        const title = session.dataset.title;
-        const details = session.dataset.details;
-        popover.innerHTML = `<div class="popover-title">${title}</div><div class="popover-content">${details}</div>`;
+        const title = sessionEl.dataset.title;
+        const details = sessionEl.dataset.details;
+        
+        popover.innerHTML = `
+            <button class="popover-close" aria-label="Close">&times;</button>
+            <div class="popover-title">${title}</div>
+            <div class="popover-content">${details}</div>
+        `;
 
-        // Position and show the popover
-        positionPopover(session);
+        popover.querySelector('.popover-close').addEventListener('click', hidePopover);
+        
+        // Position and show
         popover.style.display = 'block';
+        positionPopover(sessionEl);
     }
 
+    /**
+     * Hides the popover and deactivates the current session.
+     */
     function hidePopover() {
         if (activeSession) {
             activeSession.classList.remove('active');
+            activeSession.focus(); // Return focus to the element
             activeSession = null;
         }
         popover.style.display = 'none';
     }
 
+    /**
+     * Calculates and sets the optimal position for the popover.
+     * @param {HTMLElement} targetElement - The element to position the popover relative to.
+     */
     function positionPopover(targetElement) {
         const rect = targetElement.getBoundingClientRect();
-        const popoverRect = popover.getBoundingClientRect(); // Note: may be 0 if newly shown
-        const containerRect = scheduleContainer.getBoundingClientRect();
-
-        // Temporarily display to measure its actual size
-        popover.style.visibility = 'hidden';
-        popover.style.display = 'block';
-        const realPopoverWidth = popover.offsetWidth;
-        const realPopoverHeight = popover.offsetHeight;
-        popover.style.display = 'none';
-        popover.style.visibility = 'visible';
         
-        let top, left;
-        const gap = 15; // Space between element and popover
+        // Use fixed positioning for simplicity and robustness across scroll positions
+        popover.style.position = 'fixed';
 
-        // Default position: above the element
-        top = rect.top - realPopoverHeight - gap;
-        left = rect.left + (rect.width / 2) - (realPopoverWidth / 2);
-        popover.className = 'session-popover arrow-bottom'; // Arrow points down
+        // Center horizontally first
+        let left = rect.left + (rect.width / 2) - (popover.offsetWidth / 2);
+        
+        // Default position: below the element
+        let top = rect.bottom + 8;
 
-        // If it goes off the top, place it below instead
-        if (top < containerRect.top) {
-            top = rect.bottom + gap;
-            popover.className = 'session-popover arrow-top'; // Arrow points up
-        }
-
-        // If it goes off the left/right, adjust horizontal position
-        if (left < containerRect.left) {
-            left = containerRect.left + 5;
-        }
-        if (left + realPopoverWidth > containerRect.right) {
-            left = containerRect.right - realPopoverWidth - 5;
+        // If it goes off the bottom of the viewport, place it above instead
+        if (top + popover.offsetHeight > window.innerHeight) {
+            top = rect.top - popover.offsetHeight - 8;
         }
         
-        // Apply final position relative to the viewport
-        popover.style.top = `${top + window.scrollY}px`;
-        popover.style.left = `${left + window.scrollX}px`;
+        // Adjust for horizontal overflow
+        if (left < 10) left = 10;
+        if (left + popover.offsetWidth > window.innerWidth) {
+            left = window.innerWidth - popover.offsetWidth - 10;
+        }
+        
+        popover.style.top = `${top}px`;
+        popover.style.left = `${left}px`;
     }
 
-    // --- Mobile View Setup (Unchanged) ---
-    function setupMobileView() {
-        // This function remains the same as before
-        if (window.innerWidth > 800) { if(scheduleContainer.dataset.view === 'desktop') return; scheduleContainer.dataset.view = 'desktop'; /* a bit more logic might be needed to restore from mobile if it was changed*/ return; }
-        if (scheduleContainer.dataset.view === 'mobile') return;
-        scheduleContainer.dataset.view = 'mobile';
-        const sessions = Array.from(scheduleContainer.querySelectorAll('.session'));
-        const dayHeadings = Object.values(window.scheduleData.day_columns).reduce((acc, curr, index) => { acc[index + 1] = curr.title; return acc; }, {});
-        const days = {};
-        sessions.forEach(session => { const day = session.getAttribute('data-day'); if (!days[day]) days[day] = []; days[day].push(session); });
-        scheduleContainer.querySelectorAll('.desktop-only, .time-label').forEach(item => item.style.display = 'none');
-        Object.keys(dayHeadings).sort().forEach(dayKey => {
-            if (days[dayKey]) {
-                const dayContainer = document.createElement('div');
-                dayContainer.className = 'day-container';
-                const header = document.createElement('div');
-                header.className = 'day-header-mobile';
-                header.textContent = dayHeadings[dayKey];
-                dayContainer.appendChild(header);
-                days[dayKey].forEach(session => dayContainer.appendChild(session));
-                scheduleContainer.appendChild(dayContainer);
-            }
-        });
+    /**
+     * Checks window size and calls the appropriate build function.
+     * Manages a data attribute on the container to prevent redundant rebuilds.
+     */
+    function handleResize() {
+        const isMobile = window.innerWidth <= 800;
+        const currentView = scheduleContainer.dataset.view;
+
+        if (isMobile && currentView !== 'mobile') {
+            scheduleContainer.dataset.view = 'mobile';
+            buildMobileView();
+        } else if (!isMobile && currentView !== 'desktop') {
+            scheduleContainer.dataset.view = 'desktop';
+            buildDesktopView();
+        }
     }
     
-    // Kick off the whole process
+    // --- Start the application ---
     initializeSchedule();
 });
