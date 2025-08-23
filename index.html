@@ -102,7 +102,6 @@
             display: none;
             flex-direction: column;
             background-color: var(--color-surface);
-            border: 1px solid #ddd;
             border-radius: 8px;
             box-shadow: 0 8px 30px rgba(0,0,0,0.2);
             padding: 20px;
@@ -136,7 +135,6 @@
             line-height: 1;
             cursor: pointer;
             color: #aaa;
-            padding: 5px;
         }
         .popover-close:hover { color: var(--color-secondary); }
 
@@ -158,13 +156,13 @@
             .schedule-grid.mobile-view { display: flex; flex-direction: column; gap: 15px; box-shadow: none; }
             .session { padding: 15px; }
             .session:hover, .session.active { transform: none; box-shadow: 0 0 0 3px var(--color-primary); }
-            .day-header-mobile { display: block; text-align: center; font-size: 1.5em; font-weight: 700; color: var(--color-primary); padding: 15px 0; border-bottom: 2px solid var(--color-primary); margin-bottom: 10px; }
+            .day-header-mobile { display: block; text-align: center; font-size: 1.5em; color: var(--color-primary); padding: 15px 0; border-bottom: 2px solid var(--color-primary); margin-bottom: 10px; }
             
-            /* --- POPOVER AS MODAL ON MOBILE --- */
+            /* --- DEFINITIVE POPOVER CENTERING ON MOBILE --- */
             .session-popover {
                 left: 50%;
                 top: 50%;
-                transform: translate(-50%, -50%); /* This centers it */
+                transform: translate(-50%, -50%);
                 width: 90vw;
                 max-width: 400px;
                 max-height: 80vh;
@@ -179,7 +177,6 @@
         <div id="schedule-container"></div>
     </div>
     
-    <!-- Elements for the popover/modal -->
     <div id="popover-overlay"></div>
     <div id="session-popover" class="session-popover" role="dialog" aria-modal="true">
         <!-- Popover content is injected by JavaScript -->
