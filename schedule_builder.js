@@ -2,52 +2,47 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof scheduleData !== 'undefined') {
         buildDesktopSchedule(scheduleData);
         buildMobileSchedule(scheduleData);
-        setupPopover(); // Setup one popover that works for both views
+        setupPopover();
     } else {
         console.error("Schedule data is not loaded.");
     }
 });
 
 /**
- * Creates a single session element div. This is a helper function to avoid repeating code.
+ * Creates a single session element div, used by both mobile and desktop builders.
  */
 function createSessionElement(session) {
     const sessionEl = document.createElement('div');
-    sessionEl.className = `grid-item session type-${session.type}`;
+    sessionEl.className = `session type-${session.type}`;
     sessionEl.innerHTML = session.title;
-    // Store data for the popover
     sessionEl.dataset.title = session.title;
     sessionEl.dataset.details = session.details || '';
     return sessionEl;
 }
 
 /**
- * Builds the desktop grid view.
+ * Builds the desktop-only grid view.
  */
 function buildDesktopSchedule(data) {
     const container = document.getElementById('schedule-container-desktop');
     if (!container) return;
-    container.innerHTML = '';
 
-    // Create Day Labels for the grid header
     data.days.forEach((day, index) => {
         const dayLabel = document.createElement('div');
-        dayLabel.className = 'grid-item day-label';
+        dayLabel.className = 'day-label';
         dayLabel.textContent = day;
         dayLabel.style.gridColumn = index + 2;
         container.appendChild(dayLabel);
     });
 
-    // Create Time Labels for the grid side
     data.timeSlots.forEach((time, index) => {
         const timeLabel = document.createElement('div');
-        timeLabel.className = 'grid-item time-label';
+        timeLabel.className = 'time-label';
         timeLabel.textContent = time;
         timeLabel.style.gridRow = index + 2;
         container.appendChild(timeLabel);
     });
 
-    // Create all session elements and position them in the grid
     data.sessions.forEach(session => {
         const sessionEl = createSessionElement(session);
         sessionEl.style.gridColumn = `${session.day + 1} / span ${session.colSpan || 1}`;
@@ -57,25 +52,20 @@ function buildDesktopSchedule(data) {
 }
 
 /**
- * Builds the mobile column view.
+ * Builds the mobile-only column view.
  */
 function buildMobileSchedule(data) {
     const container = document.getElementById('schedule-container-mobile');
     if (!container) return;
-    container.innerHTML = '';
 
-    // Group sessions by day
     data.days.forEach((day, dayIndex) => {
-        // Create the header for this day (e.g., "Day 1")
         const mobileHeader = document.createElement('div');
         mobileHeader.className = 'mobile-day-header';
         mobileHeader.textContent = day;
         container.appendChild(mobileHeader);
 
-        // Get sessions only for the current day
         const sessionsForDay = data.sessions.filter(session => session.day === dayIndex + 1);
         
-        // Add all sessions for this day
         sessionsForDay.forEach(session => {
             const sessionEl = createSessionElement(session);
             container.appendChild(sessionEl);
@@ -84,7 +74,7 @@ function buildMobileSchedule(data) {
 }
 
 /**
- * Sets up a single popover to listen for clicks in the main container.
+ * Sets up a single popover for the whole page.
  */
 function setupPopover() {
     const mainContainer = document.querySelector('.main-container');
@@ -93,44 +83,31 @@ function setupPopover() {
 
     if (!mainContainer || !popover) return;
 
-    // A single click listener on the parent works for both visible and hidden views.
     mainContainer.addEventListener('click', (event) => {
         const sessionEl = event.target.closest('.session');
 
-        // Close popover if clicking outside or on the same session again
         if (!sessionEl || sessionEl === activeSession) {
             popover.style.display = 'none';
-            if (activeSession) {
-                activeSession.classList.remove('active');
-                activeSession = null;
-            }
+            if (activeSession) activeSession.classList.remove('active');
+            activeSession = null;
             return;
         }
 
-        // Deactivate previous session
-        if (activeSession) {
-            activeSession.classList.remove('active');
-        }
+        if (activeSession) activeSession.classList.remove('active');
 
-        // Activate new session and populate popover
         activeSession = sessionEl;
         activeSession.classList.add('active');
-        const title = activeSession.dataset.title;
-        const details = activeSession.dataset.details.replace(/\n/g, '<br>');
-        popover.innerHTML = `<div class="popover-title">${title}</div><div>${details}</div>`;
+        popover.innerHTML = `<div class="popover-title">${activeSession.dataset.title}</div><div>${activeSession.dataset.details.replace(/\n/g, '<br>')}</div>`;
         popover.style.display = 'block';
         
         positionPopover(activeSession, popover);
     });
 
-    // Global click listener to close the popover if clicking anywhere else
     document.addEventListener('click', (event) => {
         if (!event.target.closest('.main-container')) {
              popover.style.display = 'none';
-            if (activeSession) {
-                activeSession.classList.remove('active');
-                activeSession = null;
-            }
+             if (activeSession) activeSession.classList.remove('active');
+             activeSession = null;
         }
     });
 }
@@ -139,7 +116,6 @@ function positionPopover(target, popover) {
     const container = document.querySelector('.main-container');
     const containerRect = container.getBoundingClientRect();
     const targetRect = target.getBoundingClientRect();
-    const popoverRect = popover.getBoundingClientRect();
 
     popover.classList.remove('arrow-top', 'arrow-bottom');
 
@@ -147,14 +123,12 @@ function positionPopover(target, popover) {
     let top = targetRect.bottom - containerRect.top + 10;
     popover.classList.add('arrow-top');
 
-    // Check if it overflows the viewport AND has space to be placed above
     if ((targetRect.bottom + popover.offsetHeight + 20) > window.innerHeight && targetRect.top > popover.offsetHeight) {
         top = targetRect.top - containerRect.top - popover.offsetHeight - 10;
         popover.classList.remove('arrow-top');
         popover.classList.add('arrow-bottom');
     }
     
-    // Keep it within the container bounds
     if (left < 10) left = 10;
     if (left + popover.offsetWidth > container.offsetWidth) left = container.offsetWidth - popover.offsetWidth - 10;
     
