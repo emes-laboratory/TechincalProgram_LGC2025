@@ -17,17 +17,14 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
             scheduleData = await response.json();
             
-            // --- DEFINITIVE TIME SLOT FIX ---
-            // Create a Set to gather all unique time points from both the predefined
-            // slots and every single session's start and end time. This is the key
-            // to ensuring the grid has a row for every event.
+            // Gather all unique time points from the predefined slots and all sessions.
             const allTimes = new Set(scheduleData.time_slots);
             scheduleData.sessions.forEach(session => {
                 allTimes.add(session.startTime);
                 allTimes.add(session.endTime);
             });
             
-            // Convert the Set to an array and sort it. This is our master timeline.
+            // Create the master timeline by sorting all unique time points.
             scheduleData.time_slots = Array.from(allTimes).sort();
 
             // Create the mapping from a time string (e.g., "10:05") to a grid row number.
@@ -46,14 +43,29 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /**
-     * Formats session details for the popover.
+     * --- CORRECTED FUNCTION ---
+     * Formats session details for the popover, now safely handling different data types.
      */
     function formatDetails(session) {
-        if (!session.details || session.details.trim() === "") return 'Details coming soon.';
+        // 1. Check if details exist at all.
+        if (!session.details) {
+            return 'Details coming soon.';
+        }
+        
+        // 2. Handle specific cases of "empty" based on the data type.
+        if (session.details_type === 'text' && typeof session.details === 'string' && session.details.trim() === "") {
+            return 'Details coming soon.';
+        }
+        if (session.details_type === 'presentations' && Array.isArray(session.details) && session.details.length === 0) {
+            return 'Details coming soon.';
+        }
+
+        // 3. Proceed with formatting now that we know we have valid data.
         switch (session.details_type) {
             case 'presentations':
                 return session.details.map(p => `• <b>${p.topic}</b>\n  <i>${p.presenter} (${p.affiliation})</i>`).join('\n\n');
             case 'panel':
+                if (!session.details.moderator || !session.details.panelists) return 'Panel details coming soon.';
                 const moderator = `<b>Moderator:</b>\n  <i>${session.details.moderator.name} (${session.details.moderator.affiliation})</i>`;
                 const panelists = session.details.panelists.map(p => `  - ${p.name} (${p.affiliation})`).join('\n');
                 return `${moderator}\n\n<b>Panelists:</b>\n${panelists}`;
@@ -72,7 +84,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const grid = document.createElement('div');
         grid.className = 'schedule-grid';
         
-        // Add Day Headers
         Object.values(scheduleData.day_columns).forEach(day => {
             const dayEl = document.createElement('div');
             dayEl.className = 'grid-item day-label';
@@ -81,7 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
             grid.appendChild(dayEl);
         });
 
-        // Add Time Labels from our complete, sorted list of times.
         scheduleData.time_slots.forEach(time => {
             const timeEl = document.createElement('div');
             timeEl.className = 'grid-item time-label';
@@ -90,7 +100,6 @@ document.addEventListener('DOMContentLoaded', function () {
             grid.appendChild(timeEl);
         });
 
-        // Add Sessions
         scheduleData.sessions.forEach(sessionData => {
             const sessionEl = document.createElement('div');
             sessionEl.className = `grid-item session type-${sessionData.type}`;
@@ -108,6 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
             sessionEl.innerHTML = sessionData.title;
             sessionEl.setAttribute('tabindex', '0');
             sessionEl.dataset.title = sessionData.title;
+            // This now calls the corrected, safe function.
             sessionEl.dataset.details = formatDetails(sessionData);
             grid.appendChild(sessionEl);
         });
@@ -157,7 +167,8 @@ document.addEventListener('DOMContentLoaded', function () {
     function addInteractivity() {
         scheduleContainer.querySelectorAll('.session').forEach(session => {
             const openPopover = (event) => {
-                if (!session.dataset.details || session.dataset.details === 'Details coming soon.') return;
+                // This check is now safe because formatDetails always returns a string.
+                if (session.dataset.details === 'Details coming soon.') return;
                 event.stopPropagation();
                 showPopover(session);
             };
@@ -184,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
         popover.querySelector('.popover-close').addEventListener('click', hidePopover);
         
-        popover.style.display = 'flex'; // Use flex now
+        popover.style.display = 'flex';
         positionPopover(sessionEl);
     }
 
@@ -200,38 +211,53 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /**
-     * --- NEW & IMPROVED POPOVER POSITIONING LOGIC ---
-     * This function now intelligently decides where to place the popover and ensures
-     * it never overflows the screen, making it fully scrollable for long content.
+     * Intelligently positions the popover to be fully visible and scrollable.
      */
     function positionPopover(targetElement) {
         const rect = targetElement.getBoundingClientRect();
         const popoverHeight = popover.offsetHeight;
         const popoverWidth = popover.offsetWidth;
-        const margin = 10; // Space from the window edge
+        const margin = 10;
 
-        // Center horizontally by default
         let left = rect.left + (rect.width / 2) - (popoverWidth / 2);
         
-        // --- Vertical Positioning ---
         const spaceBelow = window.innerHeight - rect.bottom;
         const spaceAbove = rect.top;
 
         let top;
-        // If there's more space below OR not enough space above, place it below.
         if (spaceBelow >= popoverHeight || spaceBelow > spaceAbove) {
             top = rect.bottom + 5;
-            // Dynamically set max-height to fit on screen
             popover.style.maxHeight = `${window.innerHeight - rect.bottom - margin * 2}px`;
-        } else { // Otherwise, place it above.
+        } else {
             top = rect.top - popoverHeight - 5;
             popover.style.maxHeight = `${rect.top - margin * 2}px`;
         }
         
-        // --- Boundary Checks to prevent going off-screen ---
-        // Clamp left position
         if (left < margin) left = margin;
         if (left + popoverWidth > window.innerWidth - margin) {
             left = window.innerWidth - popoverWidth - margin;
         }
-        // C
+        if (top < margin) top = margin;
+
+        popover.style.top = `${top}px`;
+        popover.style.left = `${left}px`;
+    }
+
+    /**
+     * Checks window size and calls the appropriate build function.
+     */
+    function handleResize() {
+        const isMobile = window.innerWidth <= 800;
+        const currentView = scheduleContainer.dataset.view;
+        if (isMobile && currentView !== 'mobile') {
+            scheduleContainer.dataset.view = 'mobile';
+            buildMobileView();
+        } else if (!isMobile && currentView !== 'desktop') {
+            scheduleContainer.dataset.view = 'desktop';
+            buildDesktopView();
+        }
+    }
+    
+    // --- Start the application ---
+    initializeSchedule();
+});
