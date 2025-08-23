@@ -19,11 +19,21 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             scheduleData = await response.json();
             
-            // Sort time slots to ensure correct order
-            scheduleData.time_slots.sort();
+            // --- INTELLIGENT TIME SLOT CORRECTION ---
+            // Create a Set to automatically handle unique values.
+            const allTimes = new Set(scheduleData.time_slots);
+            
+            // Add all start and end times from sessions to the Set.
+            scheduleData.sessions.forEach(session => {
+                allTimes.add(session.startTime);
+                allTimes.add(session.endTime);
+            });
+            
+            // Convert the Set back to an array and sort it chronologically.
+            // This becomes the new, complete source of truth for our timeline.
+            scheduleData.time_slots = Array.from(allTimes).sort();
 
-            // *** CRITICAL FIX ***
-            // Create a map from time string to grid row index. This is more reliable than mathematical calculation.
+            // Create a map from each time string to its corresponding grid row index.
             // Row 1 is for day headers, so times start on row 2.
             scheduleData.time_slots.forEach((time, index) => {
                 timeToRowMap[time] = index + 2; 
@@ -45,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
      * @returns {string} - Formatted HTML string.
      */
     function formatDetails(session) {
-        if (!session.details) return 'Details coming soon.';
+        if (!session.details || session.details.trim() === "") return 'Details coming soon.';
         switch (session.details_type) {
             case 'presentations':
                 return session.details.map(p => `• <b>${p.topic}</b>\n  <i>${p.presenter} (${p.affiliation})</i>`).join('\n\n');
@@ -78,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
             grid.appendChild(dayEl);
         });
 
-        // Add Time Labels
+        // Add Time Labels using the corrected and complete time_slots array
         scheduleData.time_slots.forEach(time => {
             const timeEl = document.createElement('div');
             timeEl.className = 'grid-item time-label';
@@ -93,12 +103,14 @@ document.addEventListener('DOMContentLoaded', function () {
             sessionEl.className = `grid-item session type-${sessionData.type}`;
             sessionEl.style.gridColumn = `${sessionData.column} / span ${sessionData.span}`;
             
-            // Use the time-to-row map for accurate positioning
+            // Use the comprehensive time-to-row map for guaranteed accurate positioning
             const startRow = timeToRowMap[sessionData.startTime];
             const endRow = timeToRowMap[sessionData.endTime];
+            
+            // This check should now always pass, but it's good practice to keep it.
             if (!startRow || !endRow) {
-                console.warn('Session has invalid start/end time:', sessionData.title);
-                return; // Skip sessions with invalid times
+                console.warn('Session has an invalid start or end time and cannot be placed:', sessionData.title);
+                return; 
             }
             sessionEl.style.gridRow = `${startRow} / ${endRow}`;
 
@@ -123,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function buildMobileView() {
         scheduleContainer.innerHTML = ''; // Clear previous content
         const mobileContainer = document.createElement('div');
-        mobileContainer.className = 'schedule-grid mobile-view'; // Use grid classes for consistency
+        mobileContainer.className = 'schedule-grid mobile-view';
 
         const sessionsByDay = {};
         scheduleData.sessions.forEach(session => {
@@ -140,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function () {
             header.textContent = scheduleData.day_columns[dayKey].title;
             mobileContainer.appendChild(header);
 
-            // Add Sessions for that day
+            // Add Sessions for that day, sorted by start time
             sessionsByDay[dayKey].sort((a, b) => a.startTime.localeCompare(b.startTime)).forEach(sessionData => {
                 const sessionEl = document.createElement('div');
                 sessionEl.className = `session type-${sessionData.type}`;
@@ -166,7 +178,6 @@ document.addEventListener('DOMContentLoaded', function () {
     function addInteractivity() {
         scheduleContainer.querySelectorAll('.session').forEach(session => {
             const openPopover = (event) => {
-                // Don't open for empty details
                 if (!session.dataset.details || session.dataset.details.trim() === 'Details coming soon.') return;
                 
                 event.stopPropagation();
@@ -186,7 +197,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
-        // Close popover if clicking outside of it
         document.addEventListener('click', (event) => {
             if (popover.style.display === 'block' && !popover.contains(event.target)) {
                 hidePopover();
@@ -216,7 +226,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         popover.querySelector('.popover-close').addEventListener('click', hidePopover);
         
-        // Position and show
         popover.style.display = 'block';
         positionPopover(sessionEl);
     }
@@ -227,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function hidePopover() {
         if (activeSession) {
             activeSession.classList.remove('active');
-            activeSession.focus(); // Return focus to the element
+            activeSession.focus(); 
             activeSession = null;
         }
         popover.style.display = 'none';
@@ -240,21 +249,15 @@ document.addEventListener('DOMContentLoaded', function () {
     function positionPopover(targetElement) {
         const rect = targetElement.getBoundingClientRect();
         
-        // Use fixed positioning for simplicity and robustness across scroll positions
         popover.style.position = 'fixed';
 
-        // Center horizontally first
         let left = rect.left + (rect.width / 2) - (popover.offsetWidth / 2);
-        
-        // Default position: below the element
         let top = rect.bottom + 8;
 
-        // If it goes off the bottom of the viewport, place it above instead
         if (top + popover.offsetHeight > window.innerHeight) {
             top = rect.top - popover.offsetHeight - 8;
         }
         
-        // Adjust for horizontal overflow
         if (left < 10) left = 10;
         if (left + popover.offsetWidth > window.innerWidth) {
             left = window.innerWidth - popover.offsetWidth - 10;
@@ -266,7 +269,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /**
      * Checks window size and calls the appropriate build function.
-     * Manages a data attribute on the container to prevent redundant rebuilds.
      */
     function handleResize() {
         const isMobile = window.innerWidth <= 800;
