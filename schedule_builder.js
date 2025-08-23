@@ -1,17 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // --- DOM Element References ---
     const scheduleContainer = document.getElementById('schedule-container');
     const popover = document.getElementById('session-popover');
     const overlay = document.getElementById('popover-overlay');
     
-    // --- State Variables ---
     let activeSession = null;
     let scheduleData = null;
     let timeToRowMap = {}; 
 
-    /**
-     * Main initialization function.
-     */
     async function initializeSchedule() {
         try {
             const response = await fetch('schedule_data.json');
@@ -23,33 +18,23 @@ document.addEventListener('DOMContentLoaded', function () {
                 allTimes.add(session.startTime);
                 allTimes.add(session.endTime);
             });
-            
             scheduleData.time_slots = Array.from(allTimes).sort();
-
-            scheduleData.time_slots.forEach((time, index) => {
-                timeToRowMap[time] = index + 2; 
-            });
+            scheduleData.time_slots.forEach((time, index) => { timeToRowMap[time] = index + 2; });
 
             handleResize();
             window.addEventListener('resize', handleResize);
-            
         } catch (error) {
             console.error("Could not load or build schedule:", error);
             scheduleContainer.innerHTML = `<p style="text-align:center; color:red;">Error loading schedule data.</p>`;
         }
     }
 
-    /**
-     * Formats session details safely.
-     */
     function formatDetails(session) {
         if (!session.details) return 'Details coming soon.';
         if (session.details_type === 'text' && typeof session.details === 'string' && session.details.trim() === "") return 'Details coming soon.';
         if (session.details_type === 'presentations' && Array.isArray(session.details) && session.details.length === 0) return 'Details coming soon.';
-
         switch (session.details_type) {
-            case 'presentations':
-                return session.details.map(p => `• <b>${p.topic}</b>\n  <i>${p.presenter} (${p.affiliation})</i>`).join('\n\n');
+            case 'presentations': return session.details.map(p => `• <b>${p.topic}</b>\n  <i>${p.presenter} (${p.affiliation})</i>`).join('\n\n');
             case 'panel':
                 if (!session.details.moderator || !session.details.panelists) return 'Panel details coming soon.';
                 const moderator = `<b>Moderator:</b>\n  <i>${session.details.moderator.name} (${session.details.moderator.affiliation})</i>`;
@@ -60,14 +45,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    /**
-     * Builds the desktop grid view.
-     */
     function buildDesktopView() {
         scheduleContainer.innerHTML = '';
         const grid = document.createElement('div');
         grid.className = 'schedule-grid';
-        
         Object.values(scheduleData.day_columns).forEach(day => {
             const dayEl = document.createElement('div');
             dayEl.className = 'grid-item day-label';
@@ -75,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function () {
             dayEl.textContent = day.title;
             grid.appendChild(dayEl);
         });
-
         scheduleData.time_slots.forEach(time => {
             const timeEl = document.createElement('div');
             timeEl.className = 'grid-item time-label';
@@ -83,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
             timeEl.textContent = time;
             grid.appendChild(timeEl);
         });
-
         scheduleData.sessions.forEach(sessionData => {
             const sessionEl = document.createElement('div');
             sessionEl.className = `grid-item session type-${sessionData.type}`;
@@ -98,31 +77,24 @@ document.addEventListener('DOMContentLoaded', function () {
             sessionEl.dataset.details = formatDetails(sessionData);
             grid.appendChild(sessionEl);
         });
-
         scheduleContainer.appendChild(grid);
         addInteractivity();
     }
     
-    /**
-     * Builds the mobile list view.
-     */
     function buildMobileView() {
         scheduleContainer.innerHTML = '';
         const mobileContainer = document.createElement('div');
         mobileContainer.className = 'schedule-grid mobile-view';
-
         const sessionsByDay = {};
         scheduleData.sessions.forEach(session => {
             if (!sessionsByDay[session.day]) sessionsByDay[session.day] = [];
             sessionsByDay[session.day].push(session);
         });
-
         Object.keys(sessionsByDay).sort().forEach(dayKey => {
             const header = document.createElement('div');
             header.className = 'day-header-mobile';
             header.textContent = scheduleData.day_columns[dayKey]?.title || `Day ${dayKey}`;
             mobileContainer.appendChild(header);
-
             sessionsByDay[dayKey].sort((a, b) => a.startTime.localeCompare(b.startTime)).forEach(sessionData => {
                 const sessionEl = document.createElement('div');
                 sessionEl.className = `session type-${sessionData.type}`;
@@ -133,14 +105,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 mobileContainer.appendChild(sessionEl);
             });
         });
-        
         scheduleContainer.appendChild(mobileContainer);
         addInteractivity();
     }
 
-    /**
-     * Adds event listeners.
-     */
     function addInteractivity() {
         scheduleContainer.querySelectorAll('.session').forEach(session => {
             const openPopover = (event) => {
@@ -151,20 +119,17 @@ document.addEventListener('DOMContentLoaded', function () {
             session.addEventListener('click', openPopover);
             session.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') openPopover(e); });
         });
-        
-        // Add listeners to close the popover
         overlay.addEventListener('click', hidePopover);
         document.addEventListener('keydown', e => { if (e.key === 'Escape') hidePopover(); });
-        popover.addEventListener('click', e => e.stopPropagation()); // Prevent clicks inside popover from closing it
     }
 
-    /**
-     * Displays the popover and overlay.
-     */
     function showPopover(sessionEl) {
         if (activeSession) activeSession.classList.remove('active');
         activeSession = sessionEl;
         activeSession.classList.add('active');
+        
+        // Reset inline styles to allow CSS to take over for mobile centering
+        popover.style.cssText = ''; 
         
         popover.innerHTML = `
             <button class="popover-close" aria-label="Close">&times;</button>
@@ -172,15 +137,13 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="popover-content">${sessionEl.dataset.details}</div>
         `;
         popover.querySelector('.popover-close').addEventListener('click', hidePopover);
-        
+        popover.addEventListener('click', e => e.stopPropagation());
+
         overlay.style.display = 'block';
         popover.style.display = 'flex';
         positionPopover(sessionEl);
     }
 
-    /**
-     * Hides the popover and overlay.
-     */
     function hidePopover() {
         if (!activeSession) return;
         activeSession.classList.remove('active');
@@ -194,44 +157,38 @@ document.addEventListener('DOMContentLoaded', function () {
      * --- FINAL, ROBUST POSITIONING LOGIC ---
      */
     function positionPopover(targetElement) {
-        // On mobile, the CSS handles everything. We don't need to run any JS positioning.
-        if (window.innerWidth <= 800) {
+        // On mobile, we do nothing. The CSS handles everything perfectly.
+        if (scheduleContainer.dataset.view === 'mobile') {
             return;
         }
 
         // --- Desktop Positioning Logic ---
         const rect = targetElement.getBoundingClientRect();
-        const margin = 15; // Space from window edge
+        const margin = 15; // Minimum space from the window edge
 
-        // Reset styles to measure natural size
-        popover.style.transform = '';
-        popover.style.top = '';
-        popover.style.left = '';
-        popover.style.maxHeight = '';
-        const popoverHeight = popover.offsetHeight;
-        const popoverWidth = popover.offsetWidth;
+        // 1. HORIZONTAL: Center the popover on the element, then clamp it
+        // so it never flows outside the left or right of the screen.
+        let left = rect.left + (rect.width / 2) - (popover.offsetWidth / 2);
+        left = Math.max(margin, Math.min(left, window.innerWidth - popover.offsetWidth - margin));
 
-        // Horizontal positioning: center it, then clamp it so it's never off-screen.
-        let left = rect.left + (rect.width / 2) - (popoverWidth / 2);
-        left = Math.max(margin, Math.min(left, window.innerWidth - popoverWidth - margin));
-
-        // Vertical positioning: check space above and below.
+        // 2. VERTICAL: Decide if it should go above or below the element.
         const spaceBelow = window.innerHeight - rect.bottom - margin;
         const spaceAbove = rect.top - margin;
 
-        // If it fits perfectly below, place it there.
-        if (popoverHeight <= spaceBelow) {
+        // If there's enough space below, place it there.
+        if (popover.offsetHeight <= spaceBelow) {
             popover.style.top = `${rect.bottom + 5}px`;
         } 
-        // Else if it fits perfectly above, place it there.
-        else if (popoverHeight <= spaceAbove) {
-            popover.style.top = `${rect.top - popoverHeight - 5}px`;
+        // If not, but there's enough space above, place it there.
+        else if (popover.offsetHeight <= spaceAbove) {
+            popover.style.top = `${rect.top - popover.offsetHeight - 5}px`;
         } 
-        // Otherwise, it must be constrained. Place it where there's more room.
+        // If it doesn't fit in either direction, place it in the larger available
+        // space and set a maxHeight to make its content scrollable.
         else {
-            if (spaceBelow > spaceAbove) {
+            if (spaceBelow >= spaceAbove) {
                 popover.style.top = `${rect.bottom + 5}px`;
-                popover.style.maxHeight = `${spaceBelow - 5}px`;
+                popover.style.maxHeight = `${spaceBelow}px`;
             } else {
                 popover.style.top = `${margin}px`;
                 popover.style.maxHeight = `${spaceAbove}px`;
@@ -241,9 +198,6 @@ document.addEventListener('DOMContentLoaded', function () {
         popover.style.left = `${left}px`;
     }
 
-    /**
-     * Handles window resizing to switch between mobile and desktop views.
-     */
     function handleResize() {
         const isMobile = window.innerWidth <= 800;
         const currentView = scheduleContainer.dataset.view;
@@ -256,6 +210,5 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
     
-    // --- Start the application ---
     initializeSchedule();
 });
