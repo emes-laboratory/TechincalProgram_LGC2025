@@ -39,8 +39,8 @@
             font-style: italic;
         }
 
-        /* --- Base Grid Item & Session Styling (Shared) --- */
-        .grid-item {
+        /* --- Base Session Styling (Shared by both views) --- */
+        .session {
             padding: 10px;
             border-radius: 4px;
             text-align: center;
@@ -51,13 +51,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-        .session {
             cursor: pointer;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        /* --- Desktop Grid Container & Styles --- */
+        /* --- DESKTOP VIEW STYLES --- */
         #schedule-container-desktop {
             display: grid;
             grid-template-columns: 80px repeat(8, 1fr);
@@ -69,18 +67,18 @@
         }
         .day-label { grid-row: 1; font-size: 1.1em; padding: 20px 10px; background: transparent; color: #555; font-weight: 700; }
         .time-label { align-items: flex-start; padding-top: 5px; background: transparent; color: #555; font-weight: 700; }
-        .session:hover {
+        #schedule-container-desktop .session:hover {
             transform: scale(1.02);
             box-shadow: 0 5px 20px rgba(0,0,0,0.15);
             z-index: 10;
         }
         .session.active {
-            box-shadow: 0 0 0 3px var(--color-primary);
+            box-shadow: 0 0 0 3px var(--color-primary) !important;
             transform: scale(1.03);
             z-index: 11;
         }
         
-        /* --- Mobile Column Container & Styles --- */
+        /* --- MOBILE VIEW STYLES --- */
         #schedule-container-mobile {
             display: none; /* Hidden by default */
             flex-direction: column;
@@ -99,46 +97,31 @@
             padding: 15px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-        #schedule-container-mobile .session.active {
-             box-shadow: 0 0 0 3px var(--color-primary);
-        }
 
-
-        /* --- Popover (Unchanged) --- */
+        /* --- Popover --- */
         .session-popover{position:absolute;display:none;background-color:var(--color-surface);color:var(--color-secondary);border:1px solid #ddd;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,0.2);padding:20px;width:350px;max-width:90vw;z-index:1000;font-size:.9em;line-height:1.5;text-align:left;white-space:pre-wrap}.session-popover::after{content:'';position:absolute;width:0;height:0;border-style:solid}.session-popover.arrow-top::after{bottom:100%;left:50%;transform:translateX(-50%);border-width:0 10px 10px;border-color:transparent transparent var(--color-surface)}.session-popover.arrow-bottom::after{top:100%;left:50%;transform:translateX(-50%);border-width:10px 10px 0;border-color:var(--color-surface) transparent transparent}.popover-title{font-weight:700;font-size:1.2em;color:var(--color-primary);margin-bottom:15px;padding-bottom:10px;border-bottom:1px solid #eee}
 
-        /* --- Color Palette (Unchanged) --- */
+        /* --- Color Palette --- */
         .type-plenary{background-color:#4f0096;color:#fff}.type-parallel_1{background-color:#fed702;color:#4f0096}.type-parallel_2{background-color:#f231bf;color:#fff}.type-panel{background-color:#ff3300;color:#fff}.type-break{background-color:#4ea72e;color:#fff}.type-social{background-color:#00b5ed;color:#4f0096}
 
-        /* --- THE RESPONSIVE SWITCH --- */
+        /* --- RESPONSIVE SWITCH --- */
         @media (max-width: 800px) {
             h1 { font-size: 1.8em; }
-            #schedule-container-desktop {
-                display: none; /* HIDE desktop view */
-            }
-            #schedule-container-mobile {
-                display: flex; /* SHOW mobile view */
-            }
+            #schedule-container-desktop { display: none; } /* HIDE desktop view */
+            #schedule-container-mobile { display: flex; }  /* SHOW mobile view */
         }
     </style>
 </head>
 <body>
-
     <div class="main-container">
         <h1>LGC2025 TECHNICAL PROGRAM</h1>
-
-        <!-- Desktop View Container (Visible on large screens) -->
         <div id="schedule-container-desktop"></div>
-
-        <!-- Mobile View Container (Visible on small screens) -->
         <div id="schedule-container-mobile"></div>
-
-        <!-- Popover Element (Used by both views) -->
         <div id="session-popover" class="session-popover"></div>
     </div>
     
-    <script src="schedule-data.js"></script>
-    <script src="schedule-builder.js"></script>
-
+    <!-- THE FIX IS HERE: Using "./" guarantees the files are found -->
+    <script src="./schedule-data.js"></script>
+    <script src="./schedule-builder.js"></script>
 </body>
 </html>
