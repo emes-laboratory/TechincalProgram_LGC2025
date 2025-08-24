@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700&display=swap" rel="stylesheet">
@@ -15,6 +14,9 @@
             --color-background: #f9f9f9;
             --color-surface: #ffffff;
             --font-main: 'League Spartan', sans-serif;
+            --font-body: 'Museo Slab', serif;
+            --font-heading: 'League Spartan', sans-serif;
+            --font-description: 'Roboto Slab', serif;
         }
         body {
             font-family: var(--font-main);
@@ -120,10 +122,13 @@
             padding-bottom: 10px;
             border-bottom: 1px solid #eee;
             flex-shrink: 0;
+            text-transform: uppercase;
         }
         .popover-content {
             white-space: pre-wrap;
             overflow-y: auto;
+            font-family: var(--font-description); 
+            font-weight: 300;                     
         }
         .popover-close {
             position: absolute;
@@ -144,7 +149,7 @@
         .type-parallel_2 { background-color: #f231bf; color: white; }
         .type-panel      { background-color: #ff3300; color: white; }
         .type-break      { background-color: #4ea72e; color: white; }
-        .type-social     { background-color: #00b5ed; color: #4f0096; }
+        .type-social     { background-color: #00b5ed; color: white; }
         .type-other      { background-color: #777; color: white; }
 
         /* --- Mobile Responsive Styles --- */
@@ -173,7 +178,6 @@
 <body>
 
     <div class="main-container">
-        <h1>LGC2025 TECHNICAL PROGRAM</h1>
         <div id="schedule-container"></div>
     </div>
     
