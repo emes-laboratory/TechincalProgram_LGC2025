@@ -160,7 +160,7 @@
         .type-other      { background-color: #777; color: white; }
 
         /* --- Mobile Responsive Styles --- */
-        .day-header-mobile { display: none; }
+        .day-header-mobile { display: none; font-weight: bold; text-transform: uppercase; }
         @media (max-width: 800px) {
             body { padding: 10px; }
             h1 { font-size: 1.8em; }
@@ -168,7 +168,7 @@
             .schedule-grid.mobile-view { display: flex; flex-direction: column; gap: 15px; box-shadow: none; }
             .session { padding: 15px; }
             .session:hover, .session.active { transform: none; box-shadow: 0 0 0 3px var(--color-primary); }
-            .day-header-mobile { display: block; text-align: center; font-size: 1.5em; color: var(--color-primary); padding: 15px 0; border-bottom: 2px solid var(--color-primary); margin-bottom: 10px; }
+            .day-header-mobile { display: block; text-align: center; font-weight: bold; font-size: 1.5em; color: var(--color-primary); padding: 15px 0; border-bottom: 2px solid var(--color-primary); margin-bottom: 10px; }
             
             /* --- DEFINITIVE POPOVER CENTERING ON MOBILE --- */
             .session-popover {
