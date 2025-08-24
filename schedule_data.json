@@ -1,9 +1,9 @@
 {
   "day_columns": {
-    "1": { "start": 2, "span": 2, "title": "DAY 1:<br>OPENING AND TECHNICAL SESSIONS" },
-    "2": { "start": 4, "span": 2, "title": "DAY 2:<br>TECHNICAL DEEP DIVE" },
-    "3": { "start": 6, "span": 2, "title": "DAY 3:<br>PANELS WORKSHOPS AND CONCLUSIONS" },
-    "4": { "start": 8, "span": 2, "title": "DAY 4:<br>FIELD TRIP AND WORKSHOPS" }
+    "1": { "start": 2, "span": 2, "title": "DAY 1: OPENING AND TECHNICAL SESSIONS" },
+    "2": { "start": 4, "span": 2, "title": "DAY 2: TECHNICAL DEEP DIVE" },
+    "3": { "start": 6, "span": 2, "title": "DAY 3: PANELS WORKSHOPS AND CONCLUSIONS" },
+    "4": { "start": 8, "span": 2, "title": "DAY 4: FIELD TRIP AND WORKSHOPS" }
   },
   "time_slots": [
     "08:30", "09:10", "10:10", "10:40", "12:00", "12:30", "13:20", "13:30", "14:30", "15:30", "16:00", "17:30"
