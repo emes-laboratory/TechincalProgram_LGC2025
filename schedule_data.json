@@ -147,7 +147,7 @@
     },
     {
       "day": 3, "column": 6, "span": 1, "startTime": "13:10", "endTime": "16:00",
-      "title": "Working Groups:<br>Geothermal Action Network \n\n Red de Acción Geotérmica (RAG)", "type": "plenary", "details_type": "text",
+      "title": "Working Groups:<br><br>Red de Acción Geotérmica (RAG)", "type": "plenary", "details_type": "text",
       "details": "Teams of the Geothermal Action Network (RAG).\nThe RAG will promote regional technical cooperation. \nDuring the congress, participants will join different working groups. In each group, we will have 90 minutes of discussion, culminating in the drafting of 3 Action Strategies for Latin America. The drafted strategies will be discussed in a plenary session to become part of the final congress declaration. \nThe goal is ambitious: The teams will meet virtually every 6 months to advance concrete objectives defined during the congress. At the next congress (in 3 years!), the teams will present tangible results of this regional cooperation and propose larger-scale initiatives."
     },
     {
@@ -162,7 +162,7 @@
     },
     {
       "day": 3, "column": 7, "span": 1, "startTime": "12:20", "endTime": "16:30",
-      "title": "SEEQUENT Workshop \n\n(Limited seats, under registration only)", "type": "panel", "details_type": "text",
+      "title": "SEEQUENT Workshop <br><br>(Limited seats, under registration only)", "type": "panel", "details_type": "text",
       "details": "Workshop by SEEQUENT\n\nIntegrated Geothermal Modelling - Modern Workflows and Case Studies,\n\nOptimizing a geothermal development requires a robust understanding of the resource throughout its life cycle. Combining insights from geology, geochemistry, geophysics, reservoir and facilities engineering, this workshop provides a step-by-step guide on how to execute a holistic geothermal asset development workflow. This workshop will also focus on how digital technologies can assist in breaking down silos between multi-faceted disciplines, improve collaboration, and positively impact asset generation, and commercial outcomes.\nAttendees will learn about the theory behind the technology as well as its direct application. They will also be provided with global examples of where the demonstrated workflows have been applied successfully."
     },
     {
@@ -172,17 +172,17 @@
     },
     {
       "day": 4, "column": 9, "span": 1, "startTime": "08:30", "endTime": "14:30",
-      "title": "BGR Closed Technical Session:\nGTG Roundtable UNFC", "type": "other", "details_type": "text",
+      "title": "BGR Closed Technical Session:<br>GTG Roundtable UNFC", "type": "other", "details_type": "text",
       "details": "BGR Closed Technical Session: GTG Roundtable UNFC"
     },
     {
       "day": 4, "column": 8, "span": 2, "startTime": "14:30", "endTime": "17:30",
-      "title": "BGR technical session:\nIntroduction to UNFC\n\n\n(Limited seats, under registration only)", "type": "panel", "details_type": "text",
+      "title": "BGR technical session:\nIntroduction to UNFC<br><br>(Limited seats, under registration only)", "type": "panel", "details_type": "text",
       "details": "BGR Technical Session: Introduction to the United Nations Framework Classification."
     },
     {
       "day": 4, "column": 8, "span": 1, "startTime": "08:30", "endTime": "14:30",
-      "title": "AHUACHAPÁN Field Trip\n\n\n(Limited seats, under registration only)", "type": "social", "details_type": "text",
+      "title": "AHUACHAPÁN Field Trip<br><br>(Limited seats, under registration only)", "type": "social", "details_type": "text",
       "details": "Technical visit to the Ahuachapán geothermal power plant on it's 50th anniversary.\n\n Unlock the secrets of resilient and sustainable geothermal energy! \n LAGEO is hosting a special guided tour of the Ahuachapán power plant, and you're invited. See the historic first UI turbine and witness the unique craft of candle manufacturing at the AH-8 well. Logistics are still being finalized. Don't miss out, register your interest now to get priority updates and reserve your place!\n\n Intinerary:\n-Departure from Hotel----------6:15am\n-Arrival at Ahuachapán-----------9:00am\n-Plant, field and direct uses visit-----------9am to 12pm\n-Lunch-----------12:30pm\n-Departure to San Salvador-----------2:00pm\n-Arrival at LAGEO-----------4:30pm \n\n Reccomendations to bring:\n- Safety (or at least closed) shoes\n- Clothing appropriate for field-trip\n- Hat, Sunscreen, Sunglasses\n\n Breakfast,lunch boxes, and water and soft drinks will be provided."
     } 
   ]
