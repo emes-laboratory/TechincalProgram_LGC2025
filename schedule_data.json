@@ -1,9 +1,9 @@
 {
   "day_columns": {
-    "1": { "start": 2, "span": 2, "title": "Day 1: Opening and Technical Sessions" },
-    "2": { "start": 4, "span": 2, "title": "Day 2: Technical Deep Dive" },
-    "3": { "start": 6, "span": 2, "title": "Day 3: Closing and Conclusions" },
-    "4": { "start": 8, "span": 2, "title": "Day 4: Field Trip and Workshops" }
+    "1": { "start": 2, "span": 2, "title": "DAY 1 : OPENING AND TECHNICAL SESSIONS" },
+    "2": { "start": 4, "span": 2, "title": "DAY 2: TECHNICAL DEEP DIVE" },
+    "3": { "start": 6, "span": 2, "title": "DAY 3: PANELS WORKSHOPS AND CONCLUSIONS" },
+    "4": { "start": 8, "span": 2, "title": "DAYy 4: FIELD TRIP AND WORKSHOPS" }
   },
   "time_slots": [
     "08:30", "09:10", "10:10", "10:40", "12:00", "12:30", "13:20", "13:30", "14:30", "15:30", "16:00", "17:30"
@@ -177,7 +177,7 @@
     },
     {
       "day": 4, "column": 8, "span": 2, "startTime": "14:30", "endTime": "17:30",
-      "title": "BGR technical session:\nntroduction to UNFC (Limited seats, under registration only)", "type": "panel", "details_type": "text",
+      "title": "BGR technical session:\n Introduction to UNFC (Limited seats, under registration only)", "type": "panel", "details_type": "text",
       "details": "BGR Technical Session: Introduction to the United Nations Framework Classification."
     },
     {
