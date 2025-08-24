@@ -16,7 +16,7 @@
       "details": [
         { "topic": "Welcome to LGC2025", "presenter": "Dr. Elizabeth Torio", "affiliation": "LAGEO" },
         { "topic": "Past, present, and future of geothermal energy in El Salvador", "presenter": "Dr. Mynor Gil", "affiliation": "President of LAGEO" },
-        { "topic": "Past, present, and future of geothermal energy in Chile", "presenter": "Dr. Diego Morata", "affiliation": "Director of CEGA" },
+        { "topic": "Role of the Central American Integration System", "presenter": "Ingrid Figueroa Santamaría (to be confirmed)", "affiliation": "Executive Director, SICA" },
         { "topic": "Past, present, and future of geothermal energy in Mexico", "presenter": "Dr. Heber Diez", "affiliation": "Geothermal Engineer - TRIUM" },
         { "topic": "IGA's vision for geothermal energy in LATAM", "presenter": "Dr. Bjarni Palsson", "affiliation": "President of the International Geothermal Association" }
       ]
@@ -65,7 +65,7 @@
       "day": 2, "column": 4, "span": 2, "startTime": "08:30", "endTime": "10:10",
       "title": "Plenary Sessions", "type": "plenary", "details_type": "presentations",
       "details": [
-        { "topic": "Role of the Central American Integration System", "presenter": "Ingrid Figueroa Santamaría (to be confirmed)", "affiliation": "Executive Director, SICA" },
+        { "topic": "Past, present, and future of geothermal energy in Chile", "presenter": "Dr. Diego Morata", "affiliation": "Director of CEGA" },
         { "topic": "Geothermal as a social driver", "presenter": "Stephanie Daboub Kattan", "affiliation": "Executive Director FUNDAGEO" },
         { "topic": "Past, present, and future of geothermal energy in Honduras", "presenter": "Dr. Wilfredo Flores", "affiliation": "Secretary Commissioner CREE of Honduras" },
         { "topic": "Past, present, and future of geothermal energy in Costa Rica", "presenter": "Mr. Adolfo Castillo Bolaños (to be confirmed)", "affiliation": "Coordinator, Geothermal Sources, Costa Rican Institute of Electricity ICE" },
