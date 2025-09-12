@@ -28,13 +28,27 @@
     },
     {
       "day": 1, "column": 2, "span": 1, "startTime": "10:40", "endTime": "12:00",
-      "title": "Technical Presentations: Room 1", "type": "parallel_1", "details_type": "text",
-      "details": "Room 1: Stay tuned for the detailed schedule!"
+      "title": "Technical Presentations: Room 1", "type": "parallel_1", 
+      "details_type": "presentations",
+      "details": [
+        { "topic": "Aprovechamiento de los Recursos Geotérmicos en Costa Rica, enfoque pasado, presente y futuro.", "presenter": "Eddy Sanchez Rivera", "affiliation": "Grupo ICE" },
+        { "topic": "Panorama del modelado numérico de yacimientos geotérmicos en Colombia como hoja de ruta para acelerar la industria.", "presenter": "Daniela Blessent", "affiliation": "Universidad de Medellín" },
+        { "topic": "50 años de energía geotérmica en Ahuachapán… su historia.", "presenter": "Marvyn Garcia", "affiliation": "LAGEO" },
+        { "topic": "Progress and Prospects of Geothermal Energy Development in Bolivia: insights from the Laguna Colorada Project.", "presenter": "Daniel Villarroel-Camacho", "affiliation": "University of Iceland" },
+        { "topic": "Geothermal power – A giant energy source still to be tapped in Brazil.", "presenter": "P.E.F. Pinto-Coelho", "affiliation": "" }
+      ]
     },
     {
       "day": 1, "column": 3, "span": 1, "startTime": "10:40", "endTime": "12:00",
-      "title": "Technical  Presentations: Room 2", "type": "parallel_2", "details_type": "text",
-      "details": "Room 2: Stay tuned for the detailed schedule!"
+      "title": "Technical  Presentations: Room 2", "type": "parallel_2",
+      "details_type": "presentations",
+      "details": [
+        { "topic": "Esmectitas en el scaling en la planta geotermal Cerro Pabellón, Chile.", "presenter": "Santiago Maza", "affiliation": "CEGA - U.Chile" },
+        { "topic": "Comparison between discharge enthalpy and dynamic measured enthalpy for pure water in geothermal fields in El Salvador.", "presenter": "José Erick Jiménez Majano", "affiliation": "" },
+        { "topic": "Modelo geológico para el área hidrotermal de Obrajuelo, El Salvador.", "presenter": "Julio Rubio", "affiliation": "LAGEO" },
+        { "topic": "Resource assessment of the Tecuamburro geothermal system using reservoir simulation incorporating geochemistry data.", "presenter": "Julian Guillermo Xicara Lopez", "affiliation": "The Geothermal Institute, NZ" },
+        { "topic": "Preliminary Investigation of the Formation Mechanism of Silica Scale in Cold Reinjection Systems at the Berlin Geothermal Field, El Salvador", "presenter": "Claudia Alejandra Miranda Alberto", "affiliation": "LAGEO/Kyushu. U." }
+      ]
     },
     {
       "day": 1, "column": 2, "span": 2, "startTime": "12:00", "endTime": "13:20",
@@ -43,13 +57,27 @@
     },
     {
       "day": 1, "column": 2, "span": 1, "startTime": "13:20", "endTime": "15:30",
-      "title": "Technical Presentations: Room 1", "type": "parallel_1", "details_type": "text",
-      "details": "Room 1: Stay tuned for the detailed schedule!"
+      "title": "Technical Presentations: Room 1", "type": "parallel_1",
+      "details_type": "presentations",
+      "details": [
+        { "topic": "", "presenter": "", "affiliation": "" },
+        { "topic": "", "presenter": "", "affiliation": "" },
+        { "topic": "", "presenter": "", "affiliation": "" },
+        { "topic": "", "presenter": "", "affiliation": "" },
+        { "topic": "", "presenter": "", "affiliation": "" }
+      ]
     },
     {
       "day": 1, "column": 3, "span": 1, "startTime": "13:20", "endTime": "15:30",
-      "title": "Technical Presentations: Room 2", "type": "parallel_2", "details_type": "text",
-      "details": "Room 2: Stay tuned for the detailed schedule!"
+      "title": "Technical Presentations: Room 2", "type": "parallel_2", 
+      "details_type": "presentations",
+      "details": [
+        { "topic": "", "presenter": "", "affiliation": "" },
+        { "topic": "", "presenter": "", "affiliation": "" },
+        { "topic": "", "presenter": "", "affiliation": "" },
+        { "topic": "", "presenter": "", "affiliation": "" },
+        { "topic": "", "presenter": "", "affiliation": "" }
+      ]
     },
     {
       "day": 1, "column": 2, "span": 2, "startTime": "15:30", "endTime": "16:00",
@@ -79,13 +107,27 @@
     },
     {
       "day": 2, "column": 4, "span": 1, "startTime": "10:40", "endTime": "12:00",
-      "title": "Technical Presentations: Room 1", "type": "parallel_1", "details_type": "text",
-      "details": "Room 1: Stay tuned for the detailed schedule!"
+      "title": "Technical Presentations: Room 1", "type": "parallel_1",
+      "details_type": "presentations",
+      "details": [
+        { "topic": "", "presenter": "", "affiliation": "" },
+        { "topic": "", "presenter": "", "affiliation": "" },
+        { "topic": "", "presenter": "", "affiliation": "" },
+        { "topic": "", "presenter": "", "affiliation": "" },
+        { "topic": "", "presenter": "", "affiliation": "" }
+      ]
     },
     {
       "day": 2, "column": 5, "span": 1, "startTime": "10:40", "endTime": "12:00",
-      "title": "Technical Presentations: Room 2", "type": "parallel_2", "details_type": "text",
-      "details": "Room 2: Stay tuned for the detailed schedule!"
+      "title": "Technical Presentations: Room 2", "type": "parallel_2",
+      "details_type": "presentations",
+      "details": [
+        { "topic": "", "presenter": "", "affiliation": "" },
+        { "topic": "", "presenter": "", "affiliation": "" },
+        { "topic": "", "presenter": "", "affiliation": "" },
+        { "topic": "", "presenter": "", "affiliation": "" },
+        { "topic": "", "presenter": "", "affiliation": "" }
+      ]
     },
     {
       "day": 2, "column": 4, "span": 2, "startTime": "12:00", "endTime": "13:20",
@@ -94,35 +136,44 @@
     },
     {
       "day": 2, "column": 4, "span": 1, "startTime": "13:20", "endTime": "15:30",
-      "title": "Technical Presentations: Room 1", "type": "parallel_1", "details_type": "text",
-      "details": "Room 1: Stay tuned for the detailed schedule!"
+      "title": "Technical Presentations: Room 1", "type": "parallel_1",
+      "details_type": "presentations",
+      "details": [
+        { "topic": "", "presenter": "", "affiliation": "" },
+        { "topic": "", "presenter": "", "affiliation": "" },
+        { "topic": "", "presenter": "", "affiliation": "" },
+        { "topic": "", "presenter": "", "affiliation": "" },
+        { "topic": "", "presenter": "", "affiliation": "" }
+      ]
     },
     {
       "day": 2, "column": 5, "span": 1, "startTime": "13:20", "endTime": "15:30",
-      "title": "Technical Presentations: Room 2", "type": "parallel_2", "details_type": "text",
-      "details": "Room 2: Stay tuned for the detailed schedule!"
+      "title": "Technical Presentations: Room 2", "type": "parallel_2",
+      "details_type": "presentations",
+      "details": [
+        { "topic": "", "presenter": "", "affiliation": "" },
+        { "topic": "", "presenter": "", "affiliation": "" },
+        { "topic": "", "presenter": "", "affiliation": "" },
+        { "topic": "", "presenter": "", "affiliation": "" },
+        { "topic": "", "presenter": "", "affiliation": "" }
+      ]
     },
     {
-      "day": 2, "column": 4, "span": 1, "startTime": "15:30", "endTime": "16:00",
-      "title": "50 years of Ahuachapán", "type": "plenary", "details_type": "text",
-      "details": "Focus session: technical presentations for the 50th anniversary of the Ahuachapán geothermal power plant."
-    },
-    {
-      "day": 2, "column": 5, "span": 1, "startTime": "15:30", "endTime": "16:00",
-      "title": "50 years of Ahuachapán", "type": "plenary", "details_type": "text",
-      "details": "Focus session: technical presentations for the 50th anniversary of the Ahuachapán geothermal power plant."
+      "day": 2, "column": 4, "span": 2, "startTime": "15:30", "endTime": "16:00",
+      "title": "Coffee Break", "type": "break", "details_type": "text",
+      "details": "Coffee and snack break. Provided by the Sheraton Presidente Hotel."
     },
     {
       "day": 2, "column": 4, "span": 2, "startTime": "16:00", "endTime": "17:30",
-      "title": "Poster Session and Coffee", "type": "plenary", "details_type": "text",
+      "title": "Poster Session", "type": "plenary", "details_type": "text",
       "details": "Poster session and networking."
     },
     {
       "day": 3, "column": 6, "span": 2, "startTime": "08:30", "endTime": "09:10",
       "title": "Plenary Sessions", "type": "plenary", "details_type": "presentations",
       "details": [
-        { "topic": "Keynote presentation: 50 years of Ahuachapán", "presenter": "Marlene Elias de Quan", "affiliation": "General Manager LAGEO" },
-        { "topic": "Keynote presentation: Geothermal in USA/Canada", "presenter": "Bryant Jones", "affiliation": "Executive Director Geothermal Rising" }
+        { "topic": "50 years of Ahuachapán, an example of sustainable production", "presenter": "Marlene Jamileth Elias de Quan", "affiliation": "General Manager LAGEO" },
+        { "topic": "Past, present and future of Geothermal in USA/Canada: the role of a large association", "presenter": "Bryant Jones", "affiliation": "Executive Director Geothermal Rising" }
       ]
     },
     {
