@@ -28,7 +28,7 @@
     },
     {
       "day": 1, "column": 2, "span": 1, "startTime": "10:40", "endTime": "12:00",
-      "title": "Technical Presentations: Room 1", "type": "parallel_1", 
+      "title": "Room 1: Country updates and geothermal prospects.", "type": "parallel_1", 
       "details_type": "presentations",
       "details": [
         { "topic": "Aprovechamiento de los Recursos Geotérmicos en Costa Rica, enfoque pasado, presente y futuro.", "presenter": "Eddy Sanchez Rivera", "affiliation": "Grupo ICE" },
@@ -40,7 +40,7 @@
     },
     {
       "day": 1, "column": 3, "span": 1, "startTime": "10:40", "endTime": "12:00",
-      "title": "Technical  Presentations: Room 2", "type": "parallel_2",
+      "title": "Room 2: Geology & Geochemistry 1", "type": "parallel_2",
       "details_type": "presentations",
       "details": [
         { "topic": "Esmectitas en el scaling en la planta geotermal Cerro Pabellón, Chile.", "presenter": "Santiago Maza", "affiliation": "CEGA - U.Chile" },
@@ -57,26 +57,27 @@
     },
     {
       "day": 1, "column": 2, "span": 1, "startTime": "13:20", "endTime": "15:30",
-      "title": "Technical Presentations: Room 1", "type": "parallel_1",
+      "title": "Room 1: Geophysics of geothermal.", "type": "parallel_1",
       "details_type": "presentations",
       "details": [
-        { "topic": "", "presenter": "", "affiliation": "" },
-        { "topic": "", "presenter": "", "affiliation": "" },
-        { "topic": "", "presenter": "", "affiliation": "" },
-        { "topic": "", "presenter": "", "affiliation": "" },
-        { "topic": "", "presenter": "", "affiliation": "" }
+        { "topic": "Integrated Geophysical Assessment of Geothermal Potential in Southern Honduras: A Case Study in the Choluteca Department.", "presenter": "Elisa Gabriela Pineda Mejia", "affiliation": "" },
+        { "topic": "Análisis del comportamiento de la porosidad en el acuífero profundo del yacimiento geotérmico Las Tres Vírgenes y su implicación en la variabilidad del comportamiento sísmico.", "presenter": "Martín Carlos Vidal García", "affiliation": "" },
+        { "topic": "Interpretación geofísica del Área geotérmica del volcán Paramillo de Santa Rosa mediante gravimetría y magnetometría, Colombia.", "presenter": "Daniela Guerrero Peña", "affiliation": "" },
+        { "topic": "Geothermal Prospecting Of The Apacheta Geothermal Field In Bolivia Using 1d Inversion Of Magnetotelluric Data.", "presenter": "Oscar Cahuana Alarcon", "affiliation": "" },
+        { "topic": "Geophysics Contribution to the Development of the Ahuachapán Geothermal Field, El Salvador.", "presenter": "Pedro Santos", "affiliation": "" }
       ]
     },
     {
       "day": 1, "column": 3, "span": 1, "startTime": "13:20", "endTime": "15:30",
-      "title": "Technical Presentations: Room 2", "type": "parallel_2", 
+      "title": "Room 2: Geology & Geochemistry 2", "type": "parallel_2", 
       "details_type": "presentations",
       "details": [
-        { "topic": "", "presenter": "", "affiliation": "" },
-        { "topic": "", "presenter": "", "affiliation": "" },
-        { "topic": "", "presenter": "", "affiliation": "" },
-        { "topic": "", "presenter": "", "affiliation": "" },
-        { "topic": "", "presenter": "", "affiliation": "" }
+        { "topic": "Análisis Estructural y Mapeo de Favorabilidad de Permeabilidad en el Campo Geotérmico de Ahuachapán.", "presenter": "Eduardo Alfredo García Zamorano", "affiliation": "" },
+        { "topic": "Laumontita-wairakita-yugawaralita como testimonio de sistemas geotermales fósiles en los Andes Chilenos.", "presenter": "Santiago Maza", "affiliation": "" },
+        { "topic": "Modelo hidrogeológico del sistema de aguas subterráneas someras en el área geotérmica Las Tres Vírgenes, Baja California Sur, México.", "presenter": "Martín Carlos Vidal García", "affiliation": "" },
+        { "topic": "The importance of geodynamic settings and exploring for geothermal energy.", "presenter": "Philip Ball", "affiliation": "" },
+        { "topic": "Li (y otros elementos estratégicos) en fluidos geotermales andinos: una opción de economía circular y minería verde para un futuro sustentable.", "presenter": "Dr. Diego Morata", "affiliation": "" }
+        { "topic": "Desgasificación Difusa De Dióxido De Carbono A Través Del Suelo Del Complejo Volcánico Chachimbiro, Ecuador.", "presenter": "Doménicca Guillén", "affiliation": "" }
       ]
     },
     {
@@ -107,26 +108,26 @@
     },
     {
       "day": 2, "column": 4, "span": 1, "startTime": "10:40", "endTime": "12:00",
-      "title": "Technical Presentations: Room 1", "type": "parallel_1",
+      "title": "Room 1: Heat flow and exploration.", "type": "parallel_1",
       "details_type": "presentations",
       "details": [
-        { "topic": "", "presenter": "", "affiliation": "" },
-        { "topic": "", "presenter": "", "affiliation": "" },
-        { "topic": "", "presenter": "", "affiliation": "" },
-        { "topic": "", "presenter": "", "affiliation": "" },
-        { "topic": "", "presenter": "", "affiliation": "" }
+        { "topic": "Cold Water Downflow Identification in The Upflow Zone.", "presenter": "Vivi Dewi Mardiana Nusantara", "affiliation": "" },
+        { "topic": "South America Review - Globla Heat Flow Database from IHFC.", "presenter": "J. Camilo Matiz-Leon", "affiliation": "" },
+        { "topic": "Global Heat Flow Database.", "presenter": "Suze Nei Pereira Guimaraes", "affiliation": "" },
+        { "topic": "Modelo Geoespacial para la Evaluación del Potencial Geotérmico de Baja Entalpía en Costa Rica.", "presenter": "Anyela Murillo Arroyo", "affiliation": "" },
+        { "topic": "GeoterRA: Plataforma inteligente para la exploración y planificación del potencial geotérmico.", "presenter": "Mario Cordero", "affiliation": "" }
       ]
     },
     {
       "day": 2, "column": 5, "span": 1, "startTime": "10:40", "endTime": "12:00",
-      "title": "Technical Presentations: Room 2", "type": "parallel_2",
+      "title": "Room 2: Advances and innovations 1.", "type": "parallel_2",
       "details_type": "presentations",
       "details": [
-        { "topic": "", "presenter": "", "affiliation": "" },
-        { "topic": "", "presenter": "", "affiliation": "" },
-        { "topic": "", "presenter": "", "affiliation": "" },
-        { "topic": "", "presenter": "", "affiliation": "" },
-        { "topic": "", "presenter": "", "affiliation": "" }
+        { "topic": "Caso de éxito de disminución de emisiones de sulfuro de hidrogeno en una planta geotérmica.", "presenter": "Sergio Sanchez", "affiliation": "" },
+        { "topic": "Integrating Advanced Geoscientific Studies and Comprehensive Resource Assessment in Geothermal Exploration.", "presenter": "Pablo Aguilera", "affiliation": "" },
+        { "topic": "Sistemas De Producción De Roca Seca Caliente (Hdr) Para El Desarrollo De La Energía Geotérmica Un Enfoque En Sistemas EGS Y AGS", "presenter": "Angela stefany Tarazona", "affiliation": "" },
+        { "topic": "3DGEm for Geothermal Exploration in Latin America.", "presenter": "Emmanuel Ramos", "affiliation": "" },
+        { "topic": "Optimizing Geothermal Resource Utilization in High-Temperature Systems: An Integrated Approach to Production Well Modelling and Intervention.", "presenter": "John Gilliland", "affiliation": "" }
       ]
     },
     {
@@ -214,7 +215,7 @@
     {
       "day": 3, "column": 7, "span": 1, "startTime": "12:20", "endTime": "16:30",
       "title": "SEEQUENT Workshop <br><br>(Limited seats, under registration only)", "type": "panel", "details_type": "text",
-      "details": "Workshop by SEEQUENT\n\nIntegrated Geothermal Modelling - Modern Workflows and Case Studies,\n\nOptimizing a geothermal development requires a robust understanding of the resource throughout its life cycle. Combining insights from geology, geochemistry, geophysics, reservoir and facilities engineering, this workshop provides a step-by-step guide on how to execute a holistic geothermal asset development workflow. This workshop will also focus on how digital technologies can assist in breaking down silos between multi-faceted disciplines, improve collaboration, and positively impact asset generation, and commercial outcomes.\nAttendees will learn about the theory behind the technology as well as its direct application. They will also be provided with global examples of where the demonstrated workflows have been applied successfully."
+      "details": "Workshop by SEEQUENT, facilitated by IGA\n\nIntegrated Geothermal Modelling - Modern Workflows and Case Studies,\n\nOptimizing a geothermal development requires a robust understanding of the resource throughout its life cycle. Combining insights from geology, geochemistry, geophysics, reservoir and facilities engineering, this workshop provides a step-by-step guide on how to execute a holistic geothermal asset development workflow. This workshop will also focus on how digital technologies can assist in breaking down silos between multi-faceted disciplines, improve collaboration, and positively impact asset generation, and commercial outcomes.\nAttendees will learn about the theory behind the technology as well as its direct application. They will also be provided with global examples of where the demonstrated workflows have been applied successfully.\nThis workshop is proudly supported by the International Geothermal Association (IGA), in partnership with Seequent to advance geothermal knowledge and collaboration."
     },
     {
       "day": 3, "column": 6, "span": 2, "startTime": "16:30", "endTime": "17:30",
