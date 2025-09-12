@@ -135,7 +135,11 @@
             white-space: pre-wrap;
             overflow-y: auto;
             font-family: var(--font-description); 
-            font-weight: 300;                     
+            font-weight: 300;
+            /* --- FIX STARTS HERE --- */
+            flex: 1; /* This allows the content area to grow and shrink as needed */
+            min-height: 0; /* This is essential for allowing the element to shrink below its content size, enabling the scrollbar */
+            /* --- FIX ENDS HERE --- */                  
         }
         .popover-close {
             position: absolute;
