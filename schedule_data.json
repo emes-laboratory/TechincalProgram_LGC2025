@@ -60,11 +60,11 @@
       "title": "Room 1: Geophysics of geothermal.", "type": "parallel_1",
       "details_type": "presentations",
       "details": [
-        { "topic": "Integrated Geophysical Assessment of Geothermal Potential in Southern Honduras: A Case Study in the Choluteca Department.", "presenter": "Elisa Gabriela Pineda Mejia", "affiliation": "" },
-        { "topic": "Análisis del comportamiento de la porosidad en el acuífero profundo del yacimiento geotérmico Las Tres Vírgenes y su implicación en la variabilidad del comportamiento sísmico.", "presenter": "Martín Carlos Vidal García", "affiliation": "" },
-        { "topic": "Interpretación geofísica del Área geotérmica del volcán Paramillo de Santa Rosa mediante gravimetría y magnetometría, Colombia.", "presenter": "Daniela Guerrero Peña", "affiliation": "" },
-        { "topic": "Geothermal Prospecting Of The Apacheta Geothermal Field In Bolivia Using 1d Inversion Of Magnetotelluric Data.", "presenter": "Oscar Cahuana Alarcon", "affiliation": "" },
-        { "topic": "Geophysics Contribution to the Development of the Ahuachapán Geothermal Field, El Salvador.", "presenter": "Pedro Santos", "affiliation": "" }
+        { "topic": "Integrated Geophysical Assessment of Geothermal Potential in Southern Honduras: A Case Study in the Choluteca Department.", "presenter": "Elisa Gabriela Pineda Mejia", "affiliation": "WING" },
+        { "topic": "Análisis del comportamiento de la porosidad en el acuífero profundo del yacimiento geotérmico Las Tres Vírgenes y su implicación en la variabilidad del comportamiento sísmico.", "presenter": "Martín Carlos Vidal García", "affiliation": "Universidad Nacional Autónoma De México" },
+        { "topic": "Interpretación geofísica del Área geotérmica del volcán Paramillo de Santa Rosa mediante gravimetría y magnetometría, Colombia.", "presenter": "Daniela Guerrero Peña", "affiliation": "WING" },
+        { "topic": "Geothermal Prospecting Of The Apacheta Geothermal Field In Bolivia Using 1d Inversion Of Magnetotelluric Data.", "presenter": "Oscar Cahuana Alarcon", "affiliation": "SEG, SPE, IGA" },
+        { "topic": "Geophysics Contribution to the Development of the Ahuachapán Geothermal Field, El Salvador.", "presenter": "Pedro Santos", "affiliation": "LAGEO" }
       ]
     },
     {
@@ -72,12 +72,12 @@
       "title": "Room 2: Geology & Geochemistry 2", "type": "parallel_2", 
       "details_type": "presentations",
       "details": [
-        { "topic": "Análisis Estructural y Mapeo de Favorabilidad de Permeabilidad en el Campo Geotérmico de Ahuachapán.", "presenter": "Eduardo Alfredo García Zamorano", "affiliation": "" },
-        { "topic": "Laumontita-wairakita-yugawaralita como testimonio de sistemas geotermales fósiles en los Andes Chilenos.", "presenter": "Santiago Maza", "affiliation": "" },
-        { "topic": "Modelo hidrogeológico del sistema de aguas subterráneas someras en el área geotérmica Las Tres Vírgenes, Baja California Sur, México.", "presenter": "Martín Carlos Vidal García", "affiliation": "" },
-        { "topic": "The importance of geodynamic settings and exploring for geothermal energy.", "presenter": "Philip Ball", "affiliation": "" },
-        { "topic": "Li (y otros elementos estratégicos) en fluidos geotermales andinos: una opción de economía circular y minería verde para un futuro sustentable.", "presenter": "Dr. Diego Morata", "affiliation": "" }
-        { "topic": "Desgasificación Difusa De Dióxido De Carbono A Través Del Suelo Del Complejo Volcánico Chachimbiro, Ecuador.", "presenter": "Doménicca Guillén", "affiliation": "" }
+        { "topic": "Análisis Estructural y Mapeo de Favorabilidad de Permeabilidad en el Campo Geotérmico de Ahuachapán.", "presenter": "Eduardo Alfredo García Zamorano", "affiliation": "Asociación Geotérmica Mexicana" },
+        { "topic": "Laumontita-wairakita-yugawaralita como testimonio de sistemas geotermales fósiles en los Andes Chilenos.", "presenter": "Santiago Maza", "affiliation": "CEGA - U.Chile" },
+        { "topic": "Modelo hidrogeológico del sistema de aguas subterráneas someras en el área geotérmica Las Tres Vírgenes, Baja California Sur, México.", "presenter": "Martín Carlos Vidal García", "affiliation": "Universidad Nacional Autónoma De México" },
+        { "topic": "The importance of geodynamic settings and exploring for geothermal energy.", "presenter": "Philip Ball", "affiliation": "Geothermal Energy Advisors,LLC" },
+        { "topic": "Li (y otros elementos estratégicos) en fluidos geotermales andinos: una opción de economía circular y minería verde para un futuro sustentable.", "presenter": "Dr. Diego Morata", "affiliation": "CEGA - U.Chile" }
+        { "topic": "Desgasificación Difusa De Dióxido De Carbono A Través Del Suelo Del Complejo Volcánico Chachimbiro, Ecuador.", "presenter": "Doménicca Guillén", "affiliation": "WING - AGE" }
       ]
     },
     {
@@ -112,10 +112,10 @@
       "details_type": "presentations",
       "details": [
         { "topic": "Cold Water Downflow Identification in The Upflow Zone.", "presenter": "Vivi Dewi Mardiana Nusantara", "affiliation": "" },
-        { "topic": "South America Review - Globla Heat Flow Database from IHFC.", "presenter": "J. Camilo Matiz-Leon", "affiliation": "" },
-        { "topic": "Global Heat Flow Database.", "presenter": "Suze Nei Pereira Guimaraes", "affiliation": "" },
-        { "topic": "Modelo Geoespacial para la Evaluación del Potencial Geotérmico de Baja Entalpía en Costa Rica.", "presenter": "Anyela Murillo Arroyo", "affiliation": "" },
-        { "topic": "GeoterRA: Plataforma inteligente para la exploración y planificación del potencial geotérmico.", "presenter": "Mario Cordero", "affiliation": "" }
+        { "topic": "South America Review - Globla Heat Flow Database from IHFC.", "presenter": "J. Camilo Matiz-Leon", "affiliation": "IHFC" },
+        { "topic": "Global Heat Flow Database.", "presenter": "Suze Nei Pereira Guimaraes", "affiliation": "Federal Rural University of Rio de Janeiro" },
+        { "topic": "Modelo Geoespacial para la Evaluación del Potencial Geotérmico de Baja Entalpía en Costa Rica.", "presenter": "Anyela Murillo Arroyo", "affiliation": "WING" },
+        { "topic": "GeoterRA: Plataforma inteligente para la exploración y planificación del potencial geotérmico.", "presenter": "Mario Cordero", "affiliation": "Universidad de Costa Rica" }
       ]
     },
     {
@@ -123,11 +123,11 @@
       "title": "Room 2: Advances and innovations 1.", "type": "parallel_2",
       "details_type": "presentations",
       "details": [
-        { "topic": "Caso de éxito de disminución de emisiones de sulfuro de hidrogeno en una planta geotérmica.", "presenter": "Sergio Sanchez", "affiliation": "" },
-        { "topic": "Integrating Advanced Geoscientific Studies and Comprehensive Resource Assessment in Geothermal Exploration.", "presenter": "Pablo Aguilera", "affiliation": "" },
-        { "topic": "Sistemas De Producción De Roca Seca Caliente (Hdr) Para El Desarrollo De La Energía Geotérmica Un Enfoque En Sistemas EGS Y AGS", "presenter": "Angela stefany Tarazona", "affiliation": "" },
+        { "topic": "Caso de éxito de disminución de emisiones de sulfuro de hidrogeno en una planta geotérmica.", "presenter": "Sergio Sanchez", "affiliation": "NALCO" },
+        { "topic": "Integrating Advanced Geoscientific Studies and Comprehensive Resource Assessment in Geothermal Exploration.", "presenter": "Pablo Aguilera", "affiliation": "JRG Energy Consultants Ltd." },
+        { "topic": "Sistemas De Producción De Roca Seca Caliente (Hdr) Para El Desarrollo De La Energía Geotérmica Un Enfoque En Sistemas EGS Y AGS", "presenter": "Angela stefany Tarazona", "affiliation": "WING-AGEOCOL" },
         { "topic": "3DGEm for Geothermal Exploration in Latin America.", "presenter": "Emmanuel Ramos", "affiliation": "" },
-        { "topic": "Optimizing Geothermal Resource Utilization in High-Temperature Systems: An Integrated Approach to Production Well Modelling and Intervention.", "presenter": "John Gilliland", "affiliation": "" }
+        { "topic": "Optimizing Geothermal Resource Utilization in High-Temperature Systems: An Integrated Approach to Production Well Modelling and Intervention.", "presenter": "John Gilliland", "affiliation": "JRG Energy Consultants Ltd." }
       ]
     },
     {
@@ -137,26 +137,27 @@
     },
     {
       "day": 2, "column": 4, "span": 1, "startTime": "13:20", "endTime": "15:30",
-      "title": "Technical Presentations: Room 1", "type": "parallel_1",
+      "title": "Room 1: Direct uses and heat flow.", "type": "parallel_1",
       "details_type": "presentations",
       "details": [
-        { "topic": "", "presenter": "", "affiliation": "" },
-        { "topic": "", "presenter": "", "affiliation": "" },
-        { "topic": "", "presenter": "", "affiliation": "" },
-        { "topic": "", "presenter": "", "affiliation": "" },
-        { "topic": "", "presenter": "", "affiliation": "" }
+        { "topic": "Use of fiber optics to evaluate the terrestrial heat flow and de-risk geothermal exploration.", "presenter": "Fiona Chapman", "affiliation": "INRS - CA" },
+        { "topic": "Uso directo de la geotermia en Chile: mucho más que generación de electricidad.", "presenter": "Diego Morata", "affiliation": "CEGA - U.Chile" },
+        { "topic": "Manifestaciones geotermales en la Laguna Verde y Salar de Maricunga: caracterización fisicoquímicas y perspectivas de uso.", "presenter": "Camila Francisca Alfaro Ramirez", "affiliation": "Universidad de Atacama" },
+        { "topic": "Geotermia circular.", "presenter": "Linda Daniele", "affiliation": "CEGA - U.Chile" },
+        { "topic": "Uso de Matriz de decisión para seleccionar sitios a calefaccionar mediante Bombas de Calor Geotérmico en zonas rurales del Altiplano Chileno.", "presenter": "Bárbara Bravo Rivera", "affiliation": "CEGA - U.Chile" }
+        { "topic": "BCG altiplano.", "presenter": "Diego Aravena Noemi", "affiliation": "" }
       ]
     },
     {
       "day": 2, "column": 5, "span": 1, "startTime": "13:20", "endTime": "15:30",
-      "title": "Technical Presentations: Room 2", "type": "parallel_2",
+      "title": "Room 2: Well logs & Social, enviromental, training aspects.", "type": "parallel_2",
       "details_type": "presentations",
       "details": [
-        { "topic": "", "presenter": "", "affiliation": "" },
-        { "topic": "", "presenter": "", "affiliation": "" },
-        { "topic": "", "presenter": "", "affiliation": "" },
-        { "topic": "", "presenter": "", "affiliation": "" },
-        { "topic": "", "presenter": "", "affiliation": "" }
+        { "topic": "Limpieza química y regeneración de pozos geotérmicos y petroleros - Sergio Sanchez 2", "presenter": "", "affiliation": "" },
+        { "topic": "Revitalizing Geothermal Records: Comprehensive Filtering of Historical Pressure and Temperature Well Logs in El Salvador's Geothermal Fields.", "presenter": "Lauren Seliné Estrada Rubio", "affiliation": "" },
+        { "topic": "Aprendiendo del pasado: Experiencias en la gestión social de proyectos geotérmicos en México, Chile y El Salvador.", "presenter": "Monserrat Aguilar Lezama", "affiliation": "WING" },
+        { "topic": "Análisis comparativo de los marcos ambientales y sociales de la banca multilateral para proyectos geotérmicos: implicaciones para la evaluación ambiental temprana en América Latina.", "presenter": "Bertha Aracely Arenivar Marroquín", "affiliation": "LAGEO" },
+        { "topic": "Impact of Geothermal Capacity Building for Sustainable Development in Latin America: Insights from the GRÓ Geothermal Training Programme.", "presenter": "Malfridur Omarsdottir", "affiliation": "GRÓ-GTP" }
       ]
     },
     {
@@ -178,17 +179,17 @@
       ]
     },
     {
-      "day": 3, "column": 6, "span": 2, "startTime": "09:10", "endTime": "10:10",
+      "day": 3, "column": 6, "span": 2, "startTime": "09:10", "endTime": "10:15",
       "title": "Panel 1", "type": "parallel_1", "details_type": "text",
       "details": ""
     },
     {
-      "day": 3, "column": 6, "span": 2, "startTime": "10:10", "endTime": "11:00",
+      "day": 3, "column": 6, "span": 2, "startTime": "10:15", "endTime": "10:55",
       "title": "Panel 2", "type": "parallel_2", "details_type": "text",
       "details": ""
     },
     {
-      "day": 3, "column": 6, "span": 2, "startTime": "11:00", "endTime": "12:00",
+      "day": 3, "column": 6, "span": 2, "startTime": "10:55", "endTime": "12:00",
       "title": "Panel 3", "type": "parallel_1", "details_type": "text",
       "details": ""
     },
