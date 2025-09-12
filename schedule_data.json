@@ -24,10 +24,10 @@
     {
       "day": 1, "column": 2, "span": 2, "startTime": "10:10", "endTime": "10:40",
       "title": "Coffee Break", "type": "break", "details_type": "text",
-      "details": "Coffee and snack break. Provided by the Sheraton Presidente Hotel."
+      "details": "Coffee and snack break. Provided by the Sheraton Presidente Hotel and sponsored by Geothermal Rising."
     },
     {
-      "day": 1, "column": 2, "span": 1, "startTime": "10:40", "endTime": "12:00",
+      "day": 1, "column": 2, "span": 1, "startTime": "10:40", "endTime": "12:10",
       "title": "Room 1: Country updates and geothermal prospects.", "type": "parallel_1", 
       "details_type": "presentations",
       "details": [
@@ -39,7 +39,7 @@
       ]
     },
     {
-      "day": 1, "column": 3, "span": 1, "startTime": "10:40", "endTime": "12:00",
+      "day": 1, "column": 3, "span": 1, "startTime": "10:40", "endTime": "12:10",
       "title": "Room 2: Geology & Geochemistry 1", "type": "parallel_2",
       "details_type": "presentations",
       "details": [
@@ -51,9 +51,9 @@
       ]
     },
     {
-      "day": 1, "column": 2, "span": 2, "startTime": "12:00", "endTime": "13:20",
+      "day": 1, "column": 2, "span": 2, "startTime": "12:10", "endTime": "13:20",
       "title": "Lunch and Networking", "type": "break", "details_type": "text",
-      "details": "Lunch included with registration fee. Provided by the Sheraton Presidente Hotel."
+      "details": "Lunch included with registration fee. Provided by the Sheraton Presidente Hotel and sponsored by Grupo IPS perforación."
     },
     {
       "day": 1, "column": 2, "span": 1, "startTime": "13:20", "endTime": "15:30",
@@ -83,7 +83,7 @@
     {
       "day": 1, "column": 2, "span": 2, "startTime": "15:30", "endTime": "16:00",
       "title": "Coffee Break", "type": "break", "details_type": "text",
-      "details": "Coffee and snack break. Provided by the Sheraton Presidente Hotel."
+      "details": "Coffee and snack break. Provided by the Sheraton Presidente Hotel and sponsored by Seequent."
     },
     {
       "day": 1, "column": 2, "span": 2, "startTime": "16:00", "endTime": "17:30",
@@ -104,10 +104,10 @@
     {
       "day": 2, "column": 4, "span": 2, "startTime": "10:10", "endTime": "10:40",
       "title": "Coffee Break", "type": "break", "details_type": "text",
-      "details": "Coffee and snack break. Provided by the Sheraton Presidente Hotel."
+      "details": "Coffee and snack break. Provided by the Sheraton Presidente Hotel and sponsored by FUNDAGEO."
     },
     {
-      "day": 2, "column": 4, "span": 1, "startTime": "10:40", "endTime": "12:00",
+      "day": 2, "column": 4, "span": 1, "startTime": "10:40", "endTime": "12:10",
       "title": "Room 1: Heat flow and exploration.", "type": "parallel_1",
       "details_type": "presentations",
       "details": [
@@ -119,7 +119,7 @@
       ]
     },
     {
-      "day": 2, "column": 5, "span": 1, "startTime": "10:40", "endTime": "12:00",
+      "day": 2, "column": 5, "span": 1, "startTime": "10:40", "endTime": "12:10",
       "title": "Room 2: Advances and innovations 1.", "type": "parallel_2",
       "details_type": "presentations",
       "details": [
@@ -131,9 +131,9 @@
       ]
     },
     {
-      "day": 2, "column": 4, "span": 2, "startTime": "12:00", "endTime": "13:20",
+      "day": 2, "column": 4, "span": 2, "startTime": "12:10", "endTime": "13:20",
       "title": "Lunch and Networking", "type": "break", "details_type": "text",
-      "details": "Lunch included with registration fee. Provided by the Sheraton Presidente Hotel."
+      "details": "Lunch included with registration fee. Provided by the Sheraton Presidente Hotel and sponsored by Volcano Energy."
     },
     {
       "day": 2, "column": 4, "span": 1, "startTime": "13:20", "endTime": "15:30",
@@ -163,7 +163,7 @@
     {
       "day": 2, "column": 4, "span": 2, "startTime": "15:30", "endTime": "16:00",
       "title": "Coffee Break", "type": "break", "details_type": "text",
-      "details": "Coffee and snack break. Provided by the Sheraton Presidente Hotel."
+      "details": "Coffee and snack break. Provided by the Sheraton Presidente Hotel and sponsored by 3D EDGE Corp."
     },
     {
       "day": 2, "column": 4, "span": 2, "startTime": "16:00", "endTime": "17:30",
@@ -180,18 +180,18 @@
     },
     {
       "day": 3, "column": 6, "span": 2, "startTime": "09:10", "endTime": "10:15",
-      "title": "Panel 1", "type": "parallel_1", "details_type": "text",
-      "details": ""
+      "title": "Panel 1: Regulación, Medio Ambiente y Sociedad: Claves para el Desarrollo Geotérmico Sostenible en Latinoamérica.", "type": "parallel_1", "details_type": "text",
+      "details": "The Latin American Geothermal Congress 2025 is set to host a crucial panel discussion titled:\n\nRegulation, Environment, and Society: Keys for Sustainable Geothermal Development in Latin America.\n\nThe panel will delve into the multifaceted challenges and opportunities surrounding the development of geothermal energy in the region, focusing on the critical balance between effective regulation, environmental stewardship, and social acceptance.\n This session will feature a distinguished group of experts:\nModerator: Barbara Bravo (Chile), an experienced professional who will guide the conversation and ensure a productive dialogue.\nPanelists:\nMarlene Jamilet Elias de Quan (El Salvador)\nWilfredo Flores (Honduras)\nAugusto Carvalho (Brazil)\nJulio Olmedo (Ecuador)\n\nThe panelists, representing diverse expertise from across Latin America, will share their insights on technical advancements, policy frameworks, and community engagement strategies essential for advancing geothermal projects responsibly. Topics will include navigating regulatory landscapes, mitigating environmental impacts, and fostering strong community relationships to ensure the long-term viability of geothermal energy as a key component of the region’s sustainable energy future.\n\nThis panel is a must-attend for scientists, lawyers, professionals, researchers, and policymakers interested in the strategic development of geothermal resources in Latin America. It offers a unique opportunity to gain practical knowledge and network with leading figures in the field."
     },
     {
       "day": 3, "column": 6, "span": 2, "startTime": "10:15", "endTime": "10:55",
       "title": "Panel 2", "type": "parallel_2", "details_type": "text",
-      "details": ""
+      "details": "The Latin American Geothermal Congress 2025 is proud to present a forward-thinking panel discussion titled:\n\nHow to Increase Conventional Geothermal Development in Latin America Without Losing the Innovative Momentum?.\n\nThis session will explore the critical challenge of scaling up proven geothermal technologies in the region while simultaneously fostering the research and development of new, cutting-edge solutions. The discussion will focus on striking the right balance between rapid deployment of existing methods and investing in the next generation of geothermal innovation to ensure long-term energy security and sustainability.\nThis panel will feature a distinguished group of experts:\n Moderator: Magaly Flores (Mexico), an industry veteran who will guide the conversation and ensure a productive dialogue.\nPanelists:\nHeber Diez Leon (MEX)\nAndy Blair (NZ)\nBryant Jones\nElla Maria Llanos (Colombia)\nDiego Morata (Chile)\n\nThe panelists will share their insights on technical advancements, policy frameworks, and financial strategies essential for advancing geothermal projects responsibly. Topics will include navigating regulatory landscapes, attracting investment for both conventional and innovative projects, and fostering international collaboration. This panel is a must-attend for professionals, researchers, and policymakers interested in the strategic development of geothermal resources in Latin America. It offers a unique opportunity to gain practical knowledge and network with leading figures in the field."
     },
     {
       "day": 3, "column": 6, "span": 2, "startTime": "10:55", "endTime": "12:00",
       "title": "Panel 3", "type": "parallel_1", "details_type": "text",
-      "details": ""
+      "details": "The Latin American Geothermal Congress 2025 is excited to host a compelling panel discussion titled:\n\nHow to Promote Research, Development, and Installation of GHP and Direct Use Geothermal Heat Systems in Latin America?. This panel will address the critical need to expand the application of geothermal heat pumps (GHP) and other direct-use technologies throughout Latin America. The conversation will focus on overcoming barriers to implementation, promoting new research, and building a sustainable market for these clean and efficient heating and cooling solutions.\n\nThe session will feature a distinguished group of experts:\nModerator: Daniela Blessent (AGEOCOL-COL)\n\nPanelists:\nSulamith Kastl (BGR; GER)\nMar Alcaraz (RIGS; ESP)\nJasmin Raymond (INRS; CA)\nSuze Guimaraes (UFRRJ; BRA)\nMarifour Omarsdottir (GRO-GTP; IS)\n\nThe panelists will share their insights on technical challenges, policy support, and economic incentives necessary to advance GHP and direct-use geothermal heat projects in the region. Topics will include case studies from various countries, innovative funding models, and strategies for public education and professional training."
     },
     {
       "day": 3, "column": 6, "span": 1, "startTime": "12:00", "endTime": "13:10",
@@ -225,17 +225,17 @@
     },
     {
       "day": 4, "column": 9, "span": 1, "startTime": "08:30", "endTime": "14:30",
-      "title": "BGR Closed Technical Session:<br>GTG Roundtable UNFC", "type": "other", "details_type": "text",
-      "details": "BGR Closed Technical Session: GTG Roundtable UNFC"
+      "title": "BGR Closed Technical Session:<br>GTG Roundtable UNFC.", "type": "other", "details_type": "text",
+      "details": "BGR Closed Technical Session: GTG Roundtable UNFC."
     },
     {
       "day": 4, "column": 8, "span": 2, "startTime": "14:30", "endTime": "17:30",
-      "title": "BGR technical session:\nIntroduction to UNFC<br><br>(Limited seats, under registration only)", "type": "panel", "details_type": "text",
+      "title": "BGR technical session:\nIntroduction to UNFC<br><br>(Limited seats, under registration only).", "type": "panel", "details_type": "text",
       "details": "BGR Technical Session: Introduction to the United Nations Framework Classification."
     },
     {
       "day": 4, "column": 8, "span": 1, "startTime": "08:30", "endTime": "14:30",
-      "title": "AHUACHAPÁN Field Trip<br><br>(Limited seats, under registration only)", "type": "social", "details_type": "text",
+      "title": "AHUACHAPÁN Field Trip<br><br>(Limited seats, under registration only).", "type": "social", "details_type": "text",
       "details": "Technical visit to the Ahuachapán geothermal power plant on it's 50th anniversary.\n\n Unlock the secrets of resilient and sustainable geothermal energy! \n LAGEO is hosting a special guided tour of the Ahuachapán power plant, and you're invited. See the historic first UI turbine and witness the unique craft of candle manufacturing at the AH-8 well. Logistics are still being finalized. Don't miss out, register your interest now to get priority updates and reserve your place!\n\n Intinerary:\n-Departure from Hotel----------6:15am\n-Arrival at Ahuachapán-----------9:00am\n-Plant, field and direct uses visit-----------9am to 12pm\n-Lunch-----------12:30pm\n-Departure to San Salvador-----------2:00pm\n-Arrival at LAGEO-----------4:30pm \n\n Reccomendations to bring:\n- Safety (or at least closed) shoes\n- Clothing appropriate for field-trip\n- Hat, Sunscreen, Sunglasses\n\n Breakfast,lunch boxes, and water and soft drinks will be provided."
     } 
   ]
