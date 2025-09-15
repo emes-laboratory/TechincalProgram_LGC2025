@@ -1,9 +1,9 @@
 {
   "day_columns": {
-    "1": { "start": 2, "span": 2, "title": "DAY 1: OPENING AND TECHNICAL SESSIONS" },
-    "2": { "start": 4, "span": 2, "title": "DAY 2: TECHNICAL DEEP DIVE" },
-    "3": { "start": 6, "span": 2, "title": "DAY 3: PANELS WORKSHOPS AND CONCLUSIONS" },
-    "4": { "start": 8, "span": 2, "title": "DAY 4: FIELD TRIP AND WORKSHOPS" }
+    "1": { "start": 2, "span": 2, "title": "DÍA 1: APERTURA Y SESIONES TÉCNICAS" },
+    "2": { "start": 4, "span": 2, "title": "DÍA 2: PROFUNDIZACIÓN TÉCNICA" },
+    "3": { "start": 6, "span": 2, "title": "DÍA 3: PANELES, TALLERES Y CONCLUSIONES" },
+    "4": { "start": 8, "span": 2, "title": "DÍA 4: VISITA DE CAMPO Y TALLERES" }
   },
   "time_slots": [
     "08:30", "09:10", "10:10", "10:40", "12:10", "12:30", "13:20", "13:30", "14:30", "15:30", "16:00", "17:30"
@@ -11,137 +11,137 @@
   "sessions": [
     {
       "day": 1, "column": 2, "span": 2, "startTime": "08:30", "endTime": "10:10",
-      "title": "Opening Ceremony", "type": "plenary",
+      "title": "Ceremonia de Apertura", "type": "plenary",
       "details_type": "presentations",
       "details": [
-        { "topic": "Welcome to LGC2025", "presenter": "Dr. Elizabeth Torio", "affiliation": "LAGEO" },
-        { "topic": "Past, present, and future of geothermal energy in El Salvador", "presenter": "Dr. Mynor Gil", "affiliation": "President of LAGEO" },
-        { "topic": "Role of the Central American Integration System", "presenter": "Ingrid Figueroa Santamaría (to be confirmed)", "affiliation": "Executive Director, SICA" },
-        { "topic": "Past, present, and future of geothermal energy in Mexico", "presenter": "Dr. Heber Diez", "affiliation": "Geothermal Engineer - TRIUM" },
-        { "topic": "IGA's vision for geothermal energy in LATAM", "presenter": "Dr. Bjarni Palsson", "affiliation": "President of the International Geothermal Association" }
+        { "topic": "Bienvenida a LGC2025", "presenter": "Dra. Elizabeth Torio", "affiliation": "LAGEO" },
+        { "topic": "Pasado, presente y futuro de la energía geotérmica en El Salvador", "presenter": "Dr. Mynor Gil", "affiliation": "Presidente de LAGEO" },
+        { "topic": "Rol del Sistema de la Integración Centroamericana", "presenter": "Ingrid Figueroa Santamaría (por confirmar)", "affiliation": "Directora Ejecutiva, SICA" },
+        { "topic": "Pasado, presente y futuro de la energía geotérmica en México", "presenter": "Dr. Heber Diez", "affiliation": "Ingeniero Geotérmico - TRIUM" },
+        { "topic": "Visión de la IGA para la energía geotérmica en LATAM", "presenter": "Dr. Bjarni Palsson", "affiliation": "Presidente de la Asociación Geotérmica Internacional" }
       ]
     },
     {
       "day": 1, "column": 2, "span": 2, "startTime": "10:10", "endTime": "10:40",
-      "title": "Coffee Break", "type": "break", "details_type": "text",
-      "details": "Coffee and snack break. Provided by the Sheraton Presidente Hotel and sponsored by Geothermal Rising."
+      "title": "Pausa para el café", "type": "break", "details_type": "text",
+      "details": "Pausa para café y refrigerio. Proporcionado por el Hotel Sheraton Presidente y patrocinado por Geothermal Rising."
     },
     {
       "day": 1, "column": 2, "span": 1, "startTime": "10:40", "endTime": "12:10",
-      "title": "Room 1: Country updates and geothermal prospects.", "type": "parallel_1", 
+      "title": "Sala 1: Actualizaciones de países y prospectos geotérmicos.", "type": "parallel_1", 
       "details_type": "presentations",
       "details": [
         { "topic": "Aprovechamiento de los Recursos Geotérmicos en Costa Rica, enfoque pasado, presente y futuro.", "presenter": "Eddy Sanchez Rivera", "affiliation": "Grupo ICE" },
         { "topic": "Panorama del modelado numérico de yacimientos geotérmicos en Colombia como hoja de ruta para acelerar la industria.", "presenter": "Daniela Blessent", "affiliation": "Universidad de Medellín" },
         { "topic": "50 años de energía geotérmica en Ahuachapán… su historia.", "presenter": "Marvyn Garcia", "affiliation": "LAGEO" },
-        { "topic": "Progress and Prospects of Geothermal Energy Development in Bolivia: insights from the Laguna Colorada Project.", "presenter": "Daniel Villarroel-Camacho", "affiliation": "University of Iceland" },
-        { "topic": "Geothermal power – A giant energy source still to be tapped in Brazil.", "presenter": "P.E.F. Pinto-Coelho", "affiliation": "" }
+        { "topic": "Progreso y Prospectivas del Desarrollo de la Energía Geotérmica en Bolivia: perspectivas del Proyecto Laguna Colorada.", "presenter": "Daniel Villarroel-Camacho", "affiliation": "Universidad de Islandia" },
+        { "topic": "Energía geotérmica – Una fuente de energía gigante aún por explotar en Brasil.", "presenter": "P.E.F. Pinto-Coelho", "affiliation": "" }
       ]
     },
     {
       "day": 1, "column": 3, "span": 1, "startTime": "10:40", "endTime": "12:10",
-      "title": "Room 2: Geology & Geochemistry 1", "type": "parallel_2",
+      "title": "Sala 2: Geología y Geoquímica 1", "type": "parallel_2",
       "details_type": "presentations",
       "details": [
         { "topic": "Esmectitas en el scaling en la planta geotermal Cerro Pabellón, Chile.", "presenter": "Santiago Maza", "affiliation": "CEGA - U.Chile" },
-        { "topic": "Comparison between discharge enthalpy and dynamic measured enthalpy for pure water in geothermal fields in El Salvador.", "presenter": "José Erick Jiménez Majano", "affiliation": "" },
+        { "topic": "Comparación entre la entalpía de descarga y la entalpía medida dinámica para agua pura en campos geotérmicos en El Salvador.", "presenter": "José Erick Jiménez Majano", "affiliation": "" },
         { "topic": "Modelo geológico para el área hidrotermal de Obrajuelo, El Salvador.", "presenter": "Julio Rubio", "affiliation": "LAGEO" },
-        { "topic": "Resource assessment of the Tecuamburro geothermal system using reservoir simulation incorporating geochemistry data.", "presenter": "Julian Guillermo Xicara Lopez", "affiliation": "The Geothermal Institute, NZ" },
-        { "topic": "Preliminary Investigation of the Formation Mechanism of Silica Scale in Cold Reinjection Systems at the Berlin Geothermal Field, El Salvador", "presenter": "Claudia Alejandra Miranda Alberto", "affiliation": "LAGEO/Kyushu. U." }
+        { "topic": "Evaluación de recursos del sistema geotérmico de Tecuamburro mediante simulación de yacimientos incorporando datos geoquímicos.", "presenter": "Julian Guillermo Xicara Lopez", "affiliation": "The Geothermal Institute, NZ" },
+        { "topic": "Investigación Preliminar del Mecanismo de Formación de Incrustaciones de Sílice en Sistemas de Reinyección Fría en el Campo Geotérmico de Berlín, El Salvador", "presenter": "Claudia Alejandra Miranda Alberto", "affiliation": "LAGEO/Kyushu. U." }
       ]
     },
     {
       "day": 1, "column": 2, "span": 2, "startTime": "12:10", "endTime": "13:20",
-      "title": "Lunch and Networking", "type": "break", "details_type": "text",
-      "details": "Lunch included with registration fee. Provided by the Sheraton Presidente Hotel and sponsored by Grupo IPS perforación."
+      "title": "Almuerzo y Networking", "type": "break", "details_type": "text",
+      "details": "Almuerzo incluido con la cuota de inscripción. Proporcionado por el Hotel Sheraton Presidente y patrocinado por Grupo IPS perforación."
     },
     {
       "day": 1, "column": 2, "span": 1, "startTime": "13:20", "endTime": "15:30",
-      "title": "Room 1: Geophysics of geothermal.", "type": "parallel_1",
+      "title": "Sala 1: Geofísica geotérmica.", "type": "parallel_1",
       "details_type": "presentations",
       "details": [
-        { "topic": "Integrated Geophysical Assessment of Geothermal Potential in Southern Honduras: A Case Study in the Choluteca Department.", "presenter": "Elisa Gabriela Pineda Mejia", "affiliation": "WING" },
+        { "topic": "Evaluación Geofísica Integrada del Potencial Geotérmico en el Sur de Honduras: Un Estudio de Caso en el Departamento de Choluteca.", "presenter": "Elisa Gabriela Pineda Mejia", "affiliation": "WING" },
         { "topic": "Análisis del comportamiento de la porosidad en el acuífero profundo del yacimiento geotérmico Las Tres Vírgenes y su implicación en la variabilidad del comportamiento sísmico.", "presenter": "Martín Carlos Vidal García", "affiliation": "Universidad Nacional Autónoma De México" },
         { "topic": "Interpretación geofísica del Área geotérmica del volcán Paramillo de Santa Rosa mediante gravimetría y magnetometría, Colombia.", "presenter": "Daniela Guerrero Peña", "affiliation": "WING" },
-        { "topic": "Geothermal Prospecting Of The Apacheta Geothermal Field In Bolivia Using 1d Inversion Of Magnetotelluric Data.", "presenter": "Oscar Cahuana Alarcon", "affiliation": "SEG, SPE, IGA" },
-        { "topic": "Geophysics Contribution to the Development of the Ahuachapán Geothermal Field, El Salvador.", "presenter": "Pedro Santos", "affiliation": "LAGEO" },
-        { "topic": "TBD", "presenter": "Augusto Carvalho", "affiliation": "SLB" }
+        { "topic": "Prospección Geotérmica del Campo Geotérmico Apacheta en Bolivia Usando Inversión 1D de Datos Magnetotelúricos.", "presenter": "Oscar Cahuana Alarcon", "affiliation": "SEG, SPE, IGA" },
+        { "topic": "Contribución de la Geofísica al Desarrollo del Campo Geotérmico de Ahuachapán, El Salvador.", "presenter": "Pedro Santos", "affiliation": "LAGEO" },
+        { "topic": "Por definir", "presenter": "Augusto Carvalho", "affiliation": "SLB" }
       ]
     },
     {
       "day": 1, "column": 3, "span": 1, "startTime": "13:20", "endTime": "15:30",
-      "title": "Room 2: Geology & Geochemistry 2", "type": "parallel_2", 
+      "title": "Sala 2: Geología y Geoquímica 2", "type": "parallel_2", 
       "details_type": "presentations",
       "details": [
         { "topic": "Análisis Estructural y Mapeo de Favorabilidad de Permeabilidad en el Campo Geotérmico de Ahuachapán.", "presenter": "Eduardo Alfredo García Zamorano", "affiliation": "Asociación Geotérmica Mexicana" },
         { "topic": "Laumontita-wairakita-yugawaralita como testimonio de sistemas geotermales fósiles en los Andes Chilenos.", "presenter": "Santiago Maza", "affiliation": "CEGA - U.Chile" },
         { "topic": "Modelo hidrogeológico del sistema de aguas subterráneas someras en el área geotérmica Las Tres Vírgenes, Baja California Sur, México.", "presenter": "Martín Carlos Vidal García", "affiliation": "Universidad Nacional Autónoma De México" },
-        { "topic": "The importance of geodynamic settings and exploring for geothermal energy.", "presenter": "Philip Ball", "affiliation": "Geothermal Energy Advisors,LLC" },
+        { "topic": "La importancia de los entornos geodinámicos y la exploración de energía geotérmica.", "presenter": "Philip Ball", "affiliation": "Geothermal Energy Advisors,LLC" },
         { "topic": "Li (y otros elementos estratégicos) en fluidos geotermales andinos: una opción de economía circular y minería verde para un futuro sustentable.", "presenter": "Dr. Diego Morata", "affiliation": "CEGA - U.Chile" },
         { "topic": "Desgasificación Difusa De Dióxido De Carbono A Través Del Suelo Del Complejo Volcánico Chachimbiro, Ecuador.", "presenter": "Doménicca Guillén", "affiliation": "WING - AGE" }
       ]
     },
     {
       "day": 1, "column": 2, "span": 2, "startTime": "15:30", "endTime": "16:00",
-      "title": "Coffee Break", "type": "break", "details_type": "text",
-      "details": "Coffee and snack break. Provided by the Sheraton Presidente Hotel and sponsored by Seequent."
+      "title": "Pausa para el café", "type": "break", "details_type": "text",
+      "details": "Pausa para café y refrigerio. Proporcionado por el Hotel Sheraton Presidente y patrocinado por Seequent."
     },
     {
       "day": 1, "column": 2, "span": 2, "startTime": "16:00", "endTime": "17:30",
-      "title": "Poster Session", "type": "plenary", "details_type": "text",
-      "details": "Poster session and networking."
+      "title": "Sesión de Pósters", "type": "plenary", "details_type": "text",
+      "details": "Sesión de pósters y networking."
     },
     {
       "day": 2, "column": 4, "span": 2, "startTime": "08:30", "endTime": "10:10",
-      "title": "Plenary Sessions", "type": "plenary", "details_type": "presentations",
+      "title": "Sesiones Plenarias", "type": "plenary", "details_type": "presentations",
       "details": [
-        { "topic": "Past, present, and future of geothermal energy in Chile", "presenter": "Dr. Diego Morata", "affiliation": "Director of CEGA" },
-        { "topic": "Geothermal as a social driver", "presenter": "Stephanie Daboub Kattan", "affiliation": "Executive Director FUNDAGEO" },
-        { "topic": "Past, present, and future of geothermal energy in Honduras", "presenter": "Dr. Wilfredo Flores", "affiliation": "Secretary Commissioner CREE of Honduras" },
-        { "topic": "Past, present, and future of geothermal energy in Costa Rica", "presenter": "Mr. Adolfo Castillo Bolaños (to be confirmed)", "affiliation": "Coordinator, Geothermal Sources, Costa Rican Institute of Electricity ICE" },
-        { "topic": "Past, present, and future of geothermal energy in Colombia", "presenter": "Ms. Maria Alejandra Socarras Moreno", "affiliation": "Coordinator of the alternative and sustainable energies group, Ministry of Mines and Energy of Colombia" }
+        { "topic": "Pasado, presente y futuro de la energía geotérmica en Chile", "presenter": "Dr. Diego Morata", "affiliation": "Director de CEGA" },
+        { "topic": "La geotermia como motor social", "presenter": "Stephanie Daboub Kattan", "affiliation": "Directora Ejecutiva FUNDAGEO" },
+        { "topic": "Pasado, presente y futuro de la energía geotérmica en Honduras", "presenter": "Dr. Wilfredo Flores", "affiliation": "Secretario Comisionado CREE de Honduras" },
+        { "topic": "Pasado, presente y futuro de la energía geotérmica en Costa Rica", "presenter": "Sr. Adolfo Castillo Bolaños (por confirmar)", "affiliation": "Coordinador, Fuentes Geotérmicas, Instituto Costarricense de Electricidad ICE" },
+        { "topic": "Pasado, presente y futuro de la energía geotérmica en Colombia", "presenter": "Sra. Maria Alejandra Socarras Moreno", "affiliation": "Coordinadora del grupo de energías alternativas y sostenibles, Ministerio de Minas y Energía de Colombia" }
       ]
     },
     {
       "day": 2, "column": 4, "span": 2, "startTime": "10:10", "endTime": "10:40",
-      "title": "Coffee Break", "type": "break", "details_type": "text",
-      "details": "Coffee and snack break. Provided by the Sheraton Presidente Hotel and sponsored by FUNDAGEO."
+      "title": "Pausa para el café", "type": "break", "details_type": "text",
+      "details": "Pausa para café y refrigerio. Proporcionado por el Hotel Sheraton Presidente y patrocinado por FUNDAGEO."
     },
     {
       "day": 2, "column": 4, "span": 1, "startTime": "10:40", "endTime": "12:10",
-      "title": "Room 1: Heat flow and exploration.", "type": "parallel_1",
+      "title": "Sala 1: Flujo de calor y exploración.", "type": "parallel_1",
       "details_type": "presentations",
       "details": [
-        { "topic": "Cold Water Downflow Identification in The Upflow Zone.", "presenter": "Vivi Dewi Mardiana Nusantara", "affiliation": "" },
-        { "topic": "South America Review - Globla Heat Flow Database from IHFC.", "presenter": "J. Camilo Matiz-Leon", "affiliation": "IHFC" },
-        { "topic": "Global Heat Flow Database.", "presenter": "Suze Nei Pereira Guimaraes", "affiliation": "Federal Rural University of Rio de Janeiro" },
+        { "topic": "Identificación de Flujo Descendente de Agua Fría en la Zona de Ascenso.", "presenter": "Vivi Dewi Mardiana Nusantara", "affiliation": "" },
+        { "topic": "Revisión de América del Sur - Base de Datos Global de Flujo de Calor del IHFC.", "presenter": "J. Camilo Matiz-Leon", "affiliation": "IHFC" },
+        { "topic": "Base de Datos Global de Flujo de Calor.", "presenter": "Suze Nei Pereira Guimaraes", "affiliation": "Universidad Federal Rural de Río de Janeiro" },
         { "topic": "Modelo Geoespacial para la Evaluación del Potencial Geotérmico de Baja Entalpía en Costa Rica.", "presenter": "Anyela Murillo Arroyo", "affiliation": "WING" },
         { "topic": "GeoterRA: Plataforma inteligente para la exploración y planificación del potencial geotérmico.", "presenter": "Mario Cordero", "affiliation": "Universidad de Costa Rica" }
       ]
     },
     {
       "day": 2, "column": 5, "span": 1, "startTime": "10:40", "endTime": "12:10",
-      "title": "Room 2: Advances and innovations 1.", "type": "parallel_2",
+      "title": "Sala 2: Avances e innovaciones 1.", "type": "parallel_2",
       "details_type": "presentations",
       "details": [
         { "topic": "Caso de éxito de disminución de emisiones de sulfuro de hidrogeno en una planta geotérmica.", "presenter": "Sergio Sanchez", "affiliation": "NALCO" },
-        { "topic": "Integrating Advanced Geoscientific Studies and Comprehensive Resource Assessment in Geothermal Exploration.", "presenter": "Pablo Aguilera", "affiliation": "JRG Energy Consultants Ltd." },
+        { "topic": "Integración de Estudios Geocientíficos Avanzados y Evaluación Integral de Recursos en la Exploración Geotérmica.", "presenter": "Pablo Aguilera", "affiliation": "JRG Energy Consultants Ltd." },
         { "topic": "Sistemas De Producción De Roca Seca Caliente (Hdr) Para El Desarrollo De La Energía Geotérmica Un Enfoque En Sistemas EGS Y AGS", "presenter": "Angela stefany Tarazona", "affiliation": "WING-AGEOCOL" },
-        { "topic": "3DGEm for Geothermal Exploration in Latin America.", "presenter": "Emmanuel Ramos", "affiliation": "" },
-        { "topic": "Optimizing Geothermal Resource Utilization in High-Temperature Systems: An Integrated Approach to Production Well Modelling and Intervention.", "presenter": "John Gilliland", "affiliation": "JRG Energy Consultants Ltd." }
+        { "topic": "3DGEm para la Exploración Geotérmica en América Latina.", "presenter": "Emmanuel Ramos", "affiliation": "" },
+        { "topic": "Optimización de la Utilización de Recursos Geotérmicos en Sistemas de Alta Temperatura: Un Enfoque Integrado para el Modelado e Intervención de Pozos de Producción.", "presenter": "John Gilliland", "affiliation": "JRG Energy Consultants Ltd." }
       ]
     },
     {
       "day": 2, "column": 4, "span": 2, "startTime": "12:10", "endTime": "13:20",
-      "title": "Lunch and Networking", "type": "break", "details_type": "text",
-      "details": "Lunch included with registration fee. Provided by the Sheraton Presidente Hotel and sponsored by Volcano Energy."
+      "title": "Almuerzo y Networking", "type": "break", "details_type": "text",
+      "details": "Almuerzo incluido con la cuota de inscripción. Proporcionado por el Hotel Sheraton Presidente y patrocinado por Volcano Energy."
     },
     {
       "day": 2, "column": 4, "span": 1, "startTime": "13:20", "endTime": "15:30",
-      "title": "Room 1: Direct uses and heat flow.", "type": "parallel_1",
+      "title": "Sala 1: Usos directos y flujo de calor.", "type": "parallel_1",
       "details_type": "presentations",
       "details": [
-        { "topic": "Use of fiber optics to evaluate the terrestrial heat flow and de-risk geothermal exploration.", "presenter": "Fiona Chapman", "affiliation": "INRS - CA" },
+        { "topic": "Uso de fibra óptica para evaluar el flujo de calor terrestre y reducir el riesgo en la exploración geotérmica.", "presenter": "Fiona Chapman", "affiliation": "INRS - CA" },
         { "topic": "Uso directo de la geotermia en Chile: mucho más que generación de electricidad.", "presenter": "Diego Morata", "affiliation": "CEGA - U.Chile" },
         { "topic": "Manifestaciones geotermales en la Laguna Verde y Salar de Maricunga: caracterización fisicoquímicas y perspectivas de uso.", "presenter": "Camila Francisca Alfaro Ramirez", "affiliation": "Universidad de Atacama" },
         { "topic": "Geotermia circular.", "presenter": "Linda Daniele", "affiliation": "CEGA - U.Chile" },
@@ -151,93 +151,93 @@
     },
     {
       "day": 2, "column": 5, "span": 1, "startTime": "13:20", "endTime": "15:30",
-      "title": "Room 2: Well logs & Social, enviromental, training aspects.", "type": "parallel_2",
+      "title": "Sala 2: Registros de pozos y aspectos sociales, ambientales y de formación.", "type": "parallel_2",
       "details_type": "presentations",
       "details": [
         { "topic": "Limpieza química y regeneración de pozos geotérmicos y petroleros - Sergio Sanchez 2", "presenter": "", "affiliation": "" },
-        { "topic": "Revitalizing Geothermal Records: Comprehensive Filtering of Historical Pressure and Temperature Well Logs in El Salvador's Geothermal Fields.", "presenter": "Lauren Seliné Estrada Rubio", "affiliation": "" },
+        { "topic": "Revitalización de Registros Geotérmicos: Filtrado Integral de Registros Históricos de Presión y Temperatura de Pozos en los Campos Geotérmicos de El Salvador.", "presenter": "Lauren Seliné Estrada Rubio", "affiliation": "" },
         { "topic": "Aprendiendo del pasado: Experiencias en la gestión social de proyectos geotérmicos en México, Chile y El Salvador.", "presenter": "Monserrat Aguilar Lezama", "affiliation": "WING" },
         { "topic": "Análisis comparativo de los marcos ambientales y sociales de la banca multilateral para proyectos geotérmicos: implicaciones para la evaluación ambiental temprana en América Latina.", "presenter": "Bertha Aracely Arenivar Marroquín", "affiliation": "LAGEO" },
-        { "topic": "Impact of Geothermal Capacity Building for Sustainable Development in Latin America: Insights from the GRÓ Geothermal Training Programme.", "presenter": "Malfridur Omarsdottir", "affiliation": "GRÓ-GTP" }
+        { "topic": "Impacto de la Creación de Capacidades Geotérmicas para el Desarrollo Sostenible en América Latina: Perspectivas del Programa de Capacitación Geotérmica GRÓ.", "presenter": "Malfridur Omarsdottir", "affiliation": "GRÓ-GTP" }
       ]
     },
     {
       "day": 2, "column": 4, "span": 2, "startTime": "15:30", "endTime": "16:00",
-      "title": "Coffee Break", "type": "break", "details_type": "text",
-      "details": "Coffee and snack break. Provided by the Sheraton Presidente Hotel and sponsored by 3D EDGE Corp."
+      "title": "Pausa para el café", "type": "break", "details_type": "text",
+      "details": "Pausa para café y refrigerio. Proporcionado por el Hotel Sheraton Presidente y patrocinado por 3D EDGE Corp."
     },
     {
       "day": 2, "column": 4, "span": 2, "startTime": "16:00", "endTime": "17:30",
-      "title": "Poster Session", "type": "plenary", "details_type": "text",
-      "details": "Poster session and networking."
+      "title": "Sesión de Pósters", "type": "plenary", "details_type": "text",
+      "details": "Sesión de pósters y networking."
     },
     {
       "day": 3, "column": 6, "span": 2, "startTime": "08:30", "endTime": "09:10",
-      "title": "Plenary Sessions", "type": "plenary", "details_type": "presentations",
+      "title": "Sesiones Plenarias", "type": "plenary", "details_type": "presentations",
       "details": [
-        { "topic": "50 years of Ahuachapán, an example of sustainable production", "presenter": "Marlene Jamileth Elias de Quan", "affiliation": "General Manager LAGEO" },
-        { "topic": "Past, present and future of Geothermal in USA/Canada: the role of a large association", "presenter": "Bryant Jones", "affiliation": "Executive Director Geothermal Rising" }
+        { "topic": "50 años de Ahuachapán, un ejemplo de producción sostenible", "presenter": "Marlene Jamileth Elias de Quan", "affiliation": "Gerente General LAGEO" },
+        { "topic": "Pasado, presente y futuro de la Geotermia en EE. UU./Canadá: el rol de una gran asociación", "presenter": "Bryant Jones", "affiliation": "Director Ejecutivo Geothermal Rising" }
       ]
     },
     {
       "day": 3, "column": 6, "span": 2, "startTime": "09:10", "endTime": "10:15",
       "title": "Panel 1: Regulación, medio ambiente y sociedad: Claves para el desarrollo geotérmico sostenible en Latinoamérica.", "type": "parallel_1", "details_type": "text",
-      "details": "The Latin American Geothermal Congress 2025 is set to host a crucial panel discussion titled:<br><br>Regulation, Environment, and Society; Keys for Sustainable Geothermal Development in Latin America.<br><br>The panel will delve into the multifaceted challenges and opportunities surrounding the development of geothermal energy in the region, focusing on the critical balance between effective regulation, environmental stewardship, and social acceptance.<br> This session will feature a distinguished group of experts:<br>Moderator: Barbara Bravo (Chile).<br><br>Panelists:<br>Marlene Jamilet Elias de Quan (LAGEO; SAL)<br>Wilfredo Flores (CREE; HON)<br>Augusto Carvalho (SLB; BRA)<br>Julio Olmedo (FPBH; EC)<br><br>The panelists, representing diverse expertise from across Latin America, will share their insights on technical advancements, policy frameworks, and community engagement strategies essential for advancing geothermal projects responsibly. Topics will include navigating regulatory landscapes, mitigating environmental impacts, and fostering strong community relationships to ensure the long-term viability of geothermal energy as a key component of the region’s sustainable energy future."
+      "details": "El Congreso Latinoamericano de Geotermia 2025 se complace en presentar un panel de discusión crucial titulado:<br><br>Regulación, Medio Ambiente y Sociedad; Claves para el Desarrollo Geotérmico Sostenible en Latinoamérica.<br><br>El panel profundizará en los desafíos y oportunidades multifacéticos que rodean el desarrollo de la energía geotérmica en la región, centrándose en el equilibrio crítico entre una regulación eficaz, la gestión ambiental y la aceptación social.<br> Esta sesión contará con un distinguido grupo de expertos:<br>Moderadora: Barbara Bravo (Chile).<br><br>Panelistas:<br>Marlene Jamilet Elias de Quan (LAGEO; SAL)<br>Wilfredo Flores (CREE; HON)<br>Augusto Carvalho (SLB; BRA)<br>Julio Olmedo (FPBH; EC)<br><br>Los panelistas, que representan diversas experiencias de toda América Latina, compartirán sus conocimientos sobre avances técnicos, marcos políticos y estrategias de participación comunitaria esenciales para avanzar de manera responsable en los proyectos geotérmicos. Los temas incluirán la navegación por los panoramas regulatorios, la mitigación de los impactos ambientales y el fomento de relaciones comunitarias sólidas para garantizar la viabilidad a largo plazo de la energía geotérmica como un componente clave del futuro energético sostenible de la región."
     },
     {
       "day": 3, "column": 6, "span": 2, "startTime": "10:15", "endTime": "10:55",
       "title": "Panel 2: ¿Cómo incrementar el desarrollo de la geotermia convencional en Latinoamérica sin perder el impulso innovador?", "type": "parallel_2", "details_type": "text",
-      "details": "The Latin American Geothermal Congress 2025 is proud to present a forward-thinking panel discussion titled:<br><br>How to Increase Conventional Geothermal Development in Latin America Without Losing the Innovative Momentum?.<br><br>This session will explore the critical challenge of scaling up proven geothermal technologies in the region while simultaneously fostering the research and development of new, cutting-edge solutions. The discussion will focus on striking the right balance between rapid deployment of existing methods and investing in the next generation of geothermal innovation to ensure long-term energy security and sustainability.<br>This panel will feature a distinguished group of experts.<br><br>Moderator: Magaly Flores (EPRI-AGM; MEX)<br><br>Panelists:<br>Heber Diez Leon (Trium; MEX)<br>Andy Blair (Upflow; NZ)<br>Bryant Jones (GR; USA)<br>Ella Maria Llanos (ETICA; NZ/COL)<br>Diego Morata (CEGA; CHI)<br><br>The panelists will share their insights on technical advancements, policy frameworks, and financial strategies essential for advancing geothermal projects responsibly. Topics will include navigating regulatory landscapes, attracting investment for both conventional and innovative projects, and fostering international collaboration."
+      "details": "El Congreso Latinoamericano de Geotermia 2025 se enorgullece en presentar un panel de discusión con visión de futuro titulado:<br><br>¿Cómo incrementar el desarrollo de la geotermia convencional en Latinoamérica sin perder el impulso innovador?.<br><br>Esta sesión explorará el desafío crítico de escalar las tecnologías geotérmicas probadas en la región, al tiempo que se fomenta la investigación y el desarrollo de soluciones nuevas y de vanguardia. La discusión se centrará en encontrar el equilibrio adecuado entre el despliegue rápido de los métodos existentes y la inversión en la próxima generación de innovación geotérmica para garantizar la seguridad y sostenibilidad energética a largo plazo.<br>Este panel contará con un distinguido grupo de expertos.<br><br>Moderadora: Magaly Flores (EPRI-AGM; MEX)<br><br>Panelistas:<br>Heber Diez Leon (Trium; MEX)<br>Andy Blair (Upflow; NZ)<br>Bryant Jones (GR; USA)<br>Ella Maria Llanos (ETICA; NZ/COL)<br>Diego Morata (CEGA; CHI)<br><br>Los panelistas compartirán sus conocimientos sobre avances técnicos, marcos políticos y estrategias financieras esenciales para avanzar de manera responsable en los proyectos geotérmicos. Los temas incluirán la navegación por los panoramas regulatorios, la atracción de inversiones para proyectos tanto convencionales como innovadores, y el fomento de la colaboración internacional."
     },
     {
       "day": 3, "column": 6, "span": 2, "startTime": "10:55", "endTime": "12:10",
       "title": "Panel 3: ¿Cómo impulsar la investigación, desarrollo e instalación de sistemas de BCG y el uso directo del calor geotérmico en América Latina?", "type": "parallel_1", "details_type": "text",
-      "details": "The Latin American Geothermal Congress 2025 is excited to host a compelling panel discussion titled:<br><br>How to Promote Research, Development, and Installation of GHP and Direct Use Geothermal Heat Systems in Latin America?. This panel will address the critical need to expand the application of geothermal heat pumps (GHP) and other direct-use technologies throughout Latin America. The conversation will focus on overcoming barriers to implementation, promoting new research, and building a sustainable market for these clean and efficient heating and cooling solutions.<br><br>The session will feature a distinguished group of experts:<br>Moderator: Daniela Blessent (AGEOCOL-COL)<br><br>Panelists:<br>Sulamith Kastl (BGR; GER)<br>Mar Alcaraz (RIGS; ESP)<br>Jasmin Raymond (INRS; CA)<br>Suze Guimaraes (UFRRJ; BRA)<br>Marifour Omarsdottir (GRO-GTP; IS)<br><br>The panelists will share their insights on technical challenges, policy support, and economic incentives necessary to advance GHP and direct-use geothermal heat projects in the region. Topics will include case studies from various countries, innovative funding models, and strategies for public education and professional training."
+      "details": "El Congreso Latinoamericano de Geotermia 2025 se complace en presentar un interesante panel de discusión titulado:<br><br>¿Cómo impulsar la investigación, desarrollo e instalación de sistemas de BCG y el uso directo del calor geotérmico en América Latina?.<br><br>Este panel abordará la necesidad crítica de expandir la aplicación de bombas de calor geotérmicas (BCG) y otras tecnologías de uso directo en toda América Latina. La conversación se centrará en superar las barreras para la implementación, promover nuevas investigaciones y construir un mercado sostenible para estas soluciones de calefacción y refrigeración limpias y eficientes.<br><br>La sesión contará con un distinguido grupo de expertos:<br>Moderadora: Daniela Blessent (AGEOCOL-COL)<br><br>Panelistas:<br>Sulamith Kastl (BGR; GER)<br>Mar Alcaraz (RIGS; ESP)<br>Jasmin Raymond (INRS; CA)<br>Suze Guimaraes (UFRRJ; BRA)<br>Marifour Omarsdottir (GRO-GTP; IS)<br><br>Los panelistas compartirán sus conocimientos sobre los desafíos técnicos, el apoyo político y los incentivos económicos necesarios para avanzar en los proyectos de BCG y uso directo del calor geotérmico en la región. Los temas incluirán estudios de caso de varios países, modelos de financiamiento innovadores y estrategias para la educación pública y la formación profesional."
     },
     {
       "day": 3, "column": 6, "span": 1, "startTime": "12:10", "endTime": "13:10",
-      "title": "Lunch and Networking", "type": "break", "details_type": "text",
-      "details": "Lunch included with registration fee. Provided by the Sheraton Presidente Hotel."
+      "title": "Almuerzo y Networking", "type": "break", "details_type": "text",
+      "details": "Almuerzo incluido con la cuota de inscripción. Proporcionado por el Hotel Sheraton Presidente."
     },
     {
       "day": 3, "column": 6, "span": 1, "startTime": "13:10", "endTime": "16:00",
-      "title": "Working Groups:<br><br>Red de Acción Geotérmica (RAG)", "type": "plenary", "details_type": "text",
-      "details": "Teams of the Geothermal Action Network (RAG).<br>The RAG will promote regional technical cooperation. <br>During the congress, participants will join different working groups. In each group, we will have 90 minutes of discussion, culminating in the drafting of 3 Action Strategies for Latin America. The drafted strategies will be discussed in a plenary session to become part of the final congress declaration. <br>The goal is ambitious: The teams will meet virtually every 6 months to advance concrete objectives defined during the congress. At the next congress (in 3 years!), the teams will present tangible results of this regional cooperation and propose larger-scale initiatives."
+      "title": "Grupos de Trabajo:<br><br>Red de Acción Geotérmica (RAG)", "type": "plenary", "details_type": "text",
+      "details": "Equipos de la Red de Acción Geotérmica (RAG).<br>La RAG promoverá la cooperación técnica regional. <br>Durante el congreso, los participantes se unirán a diferentes grupos de trabajo. En cada grupo, tendremos 90 minutos de discusión, que culminarán en la redacción de 3 Estrategias de Acción para América Latina. Las estrategias redactadas se discutirán en una sesión plenaria para formar parte de la declaración final del congreso. <br>El objetivo es ambicioso: Los equipos se reunirán virtualmente cada 6 meses para avanzar en objetivos concretos definidos durante el congreso. En el próximo congreso (¡en 3 años!), los equipos presentarán resultados tangibles de esta cooperación regional y propondrán iniciativas de mayor escala."
     },
     {
       "day": 3, "column": 6, "span": 1, "startTime": "16:00", "endTime": "16:30",
-      "title": "Coffee Break", "type": "break", "details_type": "text",
-      "details": "Coffee and snack break. Provided by the Sheraton Presidente Hotel."
+      "title": "Pausa para el café", "type": "break", "details_type": "text",
+      "details": "Pausa para café y refrigerio. Proporcionado por el Hotel Sheraton Presidente."
     },
     {
       "day": 3, "column": 7, "span": 1, "startTime": "12:10", "endTime": "12:20",
-      "title": "Lunch", "type": "break", "details_type": "text",
-      "details": "Lunch included with registration fee. Provided by the Sheraton Presidente Hotel."
+      "title": "Almuerzo", "type": "break", "details_type": "text",
+      "details": "Almuerzo incluido con la cuota de inscripción. Proporcionado por el Hotel Sheraton Presidente."
     },
     {
       "day": 3, "column": 7, "span": 1, "startTime": "12:20", "endTime": "16:30",
-      "title": "SEEQUENT Workshop <br><br>(Limited seats, under registration only)", "type": "panel", "details_type": "text",
-      "details": "Workshop by SEEQUENT, facilitated by IGA<br><br>Integrated Geothermal Modelling - Modern Workflows and Case Studies,<br><br>Optimizing a geothermal development requires a robust understanding of the resource throughout its life cycle. Combining insights from geology, geochemistry, geophysics, reservoir and facilities engineering, this workshop provides a step-by-step guide on how to execute a holistic geothermal asset development workflow. This workshop will also focus on how digital technologies can assist in breaking down silos between multi-faceted disciplines, improve collaboration, and positively impact asset generation, and commercial outcomes.<br>Attendees will learn about the theory behind the technology as well as its direct application. They will also be provided with global examples of where the demonstrated workflows have been applied successfully.<br>This workshop is proudly supported by the International Geothermal Association (IGA), in partnership with Seequent to advance geothermal knowledge and collaboration."
+      "title": "Taller de SEEQUENT <br><br>(Plazas limitadas, solo bajo inscripción)", "type": "panel", "details_type": "text",
+      "details": "Taller de SEEQUENT, facilitado por la IGA<br><br>Modelado Geotérmico Integrado - Flujos de Trabajo Modernos y Casos de Estudio,<br><br>La optimización de un desarrollo geotérmico requiere una comprensión sólida del recurso a lo largo de su ciclo de vida. Combinando conocimientos de geología, geoquímica, geofísica e ingeniería de yacimientos e instalaciones, este taller ofrece una guía paso a paso sobre cómo ejecutar un flujo de trabajo holístico para el desarrollo de activos geotérmicos. Este taller también se centrará en cómo las tecnologías digitales pueden ayudar a romper los silos entre disciplinas multifacéticas, mejorar la colaboración e impactar positivamente en la generación de activos y los resultados comerciales.<br>Los asistentes aprenderán sobre la teoría detrás de la tecnología, así como su aplicación directa. También se les proporcionarán ejemplos globales de dónde se han aplicado con éxito los flujos de trabajo demostrados.<br>Este taller cuenta con el orgulloso apoyo de la Asociación Geotérmica Internacional (IGA), en colaboración con Seequent para avanzar en el conocimiento y la colaboración geotérmica."
     },
     {
       "day": 3, "column": 6, "span": 2, "startTime": "16:30", "endTime": "17:30",
-      "title": "Closing Plenary", "type": "plenary", "details_type": "text",
-      "details": "• Vote on the key points of the declaration for geothermal energy in Latin America.<br>• Awards for best presentations, posters, and panels.<br>• Closing speech of the congress."
+      "title": "Plenaria de Clausura", "type": "plenary", "details_type": "text",
+      "details": "• Votación de los puntos clave de la declaración para la energía geotérmica en Latinoamérica.<br>• Premios a las mejores presentaciones, pósters y paneles.<br>• Discurso de clausura del congreso."
     },
     {
       "day": 4, "column": 9, "span": 1, "startTime": "08:30", "endTime": "14:30",
-      "title": "BGR Closed Technical Session:<br>GTG Roundtable UNFC.", "type": "other", "details_type": "text",
-      "details": "BGR Closed Technical Session: GTG Roundtable UNFC."
+      "title": "Sesión Técnica Cerrada de BGR:<br>Mesa Redonda GTG UNFC.", "type": "other", "details_type": "text",
+      "details": "Sesión Técnica Cerrada de BGR: Mesa Redonda GTG UNFC."
     },
     {
       "day": 4, "column": 8, "span": 2, "startTime": "14:30", "endTime": "17:30",
-      "title": "BGR technical session:<br>Introduction to UNFC<br><br>(Limited seats, under registration only).", "type": "panel", "details_type": "text",
-      "details": "BGR Technical Session: Introduction to the United Nations Framework Classification."
+      "title": "Sesión técnica de BGR:<br>Introducción a la UNFC<br><br>(Plazas limitadas, solo bajo inscripción).", "type": "panel", "details_type": "text",
+      "details": "Sesión Técnica de BGR: Introducción a la Clasificación Marco de las Naciones Unidas."
     },
     {
       "day": 4, "column": 8, "span": 1, "startTime": "08:30", "endTime": "14:30",
-      "title": "AHUACHAPÁN Field Trip<br><br>(Limited seats, under registration only).", "type": "social", "details_type": "text",
-      "details": "Technical visit to the Ahuachapán geothermal power plant on it's 50th anniversary.<br><br> Unlock the secrets of resilient and sustainable geothermal energy! <br> LAGEO is hosting a special guided tour of the Ahuachapán power plant, and you're invited. See the historic first UI turbine and witness the unique craft of candle manufacturing at the AH-8 well. Logistics are still being finalized. Don't miss out, register your interest now to get priority updates and reserve your place!<br><br> Intinerary:<br>-Departure from Hotel----------6:15am<br>-Arrival at Ahuachapán-----------9:00am<br>-Plant, field and direct uses visit-----------9am to 12pm<br>-Lunch-----------12:30pm<br>-Departure to San Salvador-----------2:00pm<br>-Arrival at LAGEO-----------4:30pm <br><br> Reccomendations to bring:<br>- Safety (or at least closed) shoes<br>- Clothing appropriate for field-trip<br>- Hat, Sunscreen, Sunglasses<br><br> Breakfast,lunch boxes, and water and soft drinks will be provided."
+      "title": "Visita de Campo a AHUACHAPÁN<br><br>(Plazas limitadas, solo bajo inscripción).", "type": "social", "details_type": "text",
+      "details": "Visita técnica a la central geotérmica de Ahuachapán en su 50º aniversario.<br><br> ¡Desbloquee los secretos de la energía geotérmica resiliente y sostenible! <br> LAGEO organiza una visita guiada especial a la central de Ahuachapán, y usted está invitado. Vea la histórica primera turbina UI y sea testigo de la artesanía única de la fabricación de velas en el pozo AH-8. La logística aún se está finalizando. ¡No se lo pierda, registre su interés ahora para recibir actualizaciones prioritarias y reservar su lugar!<br><br> Itinerario:<br>-Salida del Hotel----------6:15am<br>-Llegada a Ahuachapán-----------9:00am<br>-Visita a la planta, campo y usos directos-----------9am a 12pm<br>-Almuerzo-----------12:30pm<br>-Salida hacia San Salvador-----------2:00pm<br>-Llegada a LAGEO-----------4:30pm <br><br> Recomendaciones para llevar:<br>- Zapatos de seguridad (o al menos cerrados)<br>- Ropa apropiada para la visita de campo<br>- Sombrero, protector solar, gafas de sol<br><br> Se proporcionará desayuno, almuerzos para llevar, agua y refrescos."
     }
   ]
 }
