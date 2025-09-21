@@ -87,7 +87,7 @@
       "details": "Pausa para café y refrigerio. Proporcionado por el Hotel Sheraton Presidente y patrocinado por Seequent."
     },
     {
-      "day": 1, "column": 4, "span": 2, "startTime": "16:00", "endTime": "17:30",
+      "day": 1, "column": 2, "span": 2, "startTime": "16:00", "endTime": "17:30",
       "title": "Poster Session", "type": "plenary", "details_type": "presentations",
       "details": [
         {"topic": "Reconstrucción del sistema geotermal fósil desarrollado en la Formación Abanico a partir de asociación de zeolitas",
