@@ -88,7 +88,7 @@
     },
     {
       "day": 1, "column": 2, "span": 2, "startTime": "16:00", "endTime": "17:30",
-      "title": "Poster Session", "type": "plenary", "details_type": "presentations",
+      "title": "Sesión de posters", "type": "plenary", "details_type": "presentations",
       "details": [
         {"topic": "Reconstrucción del sistema geotermal fósil desarrollado en la Formación Abanico a partir de asociación de zeolitas",
           "presenter": "Estefanía Alejandra Peña Loyola",
@@ -265,7 +265,7 @@
     },
     {
       "day": 2, "column": 4, "span": 2, "startTime": "16:00", "endTime": "17:30",
-      "title": "Poster Session", "type": "plenary", "details_type": "presentations",
+      "title": "Sesión de posters", "type": "plenary", "details_type": "presentations",
       "details": [
         {"topic": "Reconstrucción del sistema geotermal fósil desarrollado en la Formación Abanico a partir de asociación de zeolitas",
           "presenter": "Estefanía Alejandra Peña Loyola",
