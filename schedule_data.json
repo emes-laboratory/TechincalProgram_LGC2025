@@ -168,8 +168,105 @@
     },
     {
       "day": 2, "column": 4, "span": 2, "startTime": "16:00", "endTime": "17:30",
-      "title": "Poster Session", "type": "plenary", "details_type": "text",
-      "details": "Poster session and networking."
+      "title": "Poster Session", "type": "plenary", "details_type": "presentations",
+      "details": [
+        {"topic": "Reconstrucción del sistema geotermal fósil desarrollado en la Formación Abanico a partir de asociación de zeolitas",
+          "presenter": "Estefanía Alejandra Peña Loyola",
+          "affiliation": "CEGA - Universidad de Chile"
+        },
+        {"topic": "Crustal heat flow mapping in Rio de Janeiro, SE Brazil, using shallow boreholes: implications for geothermal resources",
+          "presenter": "Fábio Aguiar",
+          "affiliation": "Federal Rural University of Rio de Janeiro"
+        },
+        {"topic": "Technical and Economic Feasibility of Geothermal Heating for Greenhouses in Southern Algeria",
+          "presenter": "Noureddine Benaouda",
+          "affiliation": "Center for Renewable Energies Development, CDER"
+        },
+        {"topic": "Potencial Geotérmico en Zonas Rurales de México: Detección mediante el uso de sensores remotos e Incentivos a la Inversión Privada.",
+          "presenter": "Emily Coutiño Escudero",
+          "affiliation": ""
+        },
+        {"topic": "Nueva Regulación Mexicana: Oportunidad de Integración de la Energía Geotérmica en la Matriz Energética Mexicana.",
+          "presenter": "Emily Coutiño Escudero",
+          "affiliation": ""
+        },
+        {"topic": "Allanando el camino para un Marco Regulatorio de la Energía Geotérmica en Brasil",
+          "presenter": "Fabricio Da Silva Ogorodnik",
+          "affiliation": "PETROBRAS"
+        },
+        {"topic": "Análisis Multiespectral y temporal para la Caracterización del Potencial Geotérmico del Volcán Azufral en su Contexto Estructural",
+          "presenter": "Maria Jose Delgado",
+          "affiliation": ""
+        },
+        {"topic": "Identificación de zonas hidrotermales en la Puna de Atacama mediante Google Earth Engine y clasificación supervisada: Aplicaciones para exploración geotérmica.",
+          "presenter": "Valentina Giovanetti",
+          "affiliation": "Departamento de Geología, Universidad de Atacama. Chile"
+        },
+        {"topic": "Estudio geoquímico de fuentes termales en la región de Atacama, norte de Chile",
+          "presenter": "Yazmin Godoy Cruz",
+          "affiliation": "Departamento de Geología, Universidad de Atacama, Copiapó, Chile; Instituto Milenio de Investigación en Riesgo Volcánico – Ckelar Volcanes"
+        },
+        {"topic": "Multiphysics Analysis in the Identification of Areas with Potential for EGS in Brazil",
+          "presenter": "Suze Guimaraes",
+          "affiliation": "Federal Rural University of Rio de Janeiro, Seropedica, RJ, Brazil"
+        },
+        {"topic": "Multicomponent Thermodynamic Geothermometry of Submarine Hot Springs in Northern Dominica",
+          "presenter": "Scott Herman",
+          "affiliation": "Vulcan Geoscience LLC"
+        },
+        {"topic": "Identification of potential geothermal targets for retrofitting in abandoned oil wells in the offshore region of the Campos Basin, Southeastern Brazil",
+          "presenter": "Beatriz Jesus",
+          "affiliation": "National Observatory, Rio de Janeiro-RJ, Brazil"
+        },
+        {"topic": "Modelamiento 1D de Magnetotelúrica Somera (AMT) y Sondeos Eléctricos Verticales (SEV) en el Volcán Azufral para la Contribución al Estudio del Potencial Geotérmico",
+          "presenter": "Diana Camila León López",
+          "affiliation": ""
+        },
+        {"topic": "El papel de la geometría de los poros en la resistencia y sismicidad de las rocas hospedantes de reservorios geotérmicos",
+          "presenter": "Fernanda Merchán",
+          "affiliation": "Pontificia Universidad Católica De Chile"
+        },
+        {"topic": "Caracterización de la Red de Fracturas y Propiedades Físicas de las Rocas en el Sistema Geotermal de Nevados de Chillán",
+          "presenter": "Valentina Mura",
+          "affiliation": "Departamento de Ingeniería Estructural y Geotécnica y CEGA, Pontificia Universidad Católica de Chile"
+        },
+        {"topic": "Aprovechamiento de los Recursos Geotérmicos en Costa Rica, pasado, presente y futuro",
+          "presenter": "Anyela Murillo Arroyo",
+          "affiliation": "WING"
+        },
+        {"topic": "Propiedades hidráulicas y evolución temporal de los niveles piezométricos en la cuenca del río Copiapó, Atacama, Chile",
+          "presenter": "Lissette Peña",
+          "affiliation": "Departamento de Geología, Universidad de Atacama. Chile"
+        },
+        {"topic": "Surface hydrothermal alteration and evolution at the Azufre volcano, Central Volcanic Zone, Chile",
+          "presenter": "Benjamín Reijnst",
+          "affiliation": "Departamento de Ciencias de la Tierra, Universidad de Concepción, CHILE."
+        },
+        {"topic": "Convivencia entre desarrollo energético y prácticas tradicionales: reflexiones desde un proyecto geotérmico en un área protegida",
+          "presenter": "Nahuel Dario Rodriguez Peria",
+          "affiliation": ""
+        },
+        {"topic": "Comparing the environmental challenges of exploiting geothermal energy compared to other types of energy",
+          "presenter": "Mirmahdi Seyedrahimi-Niaraq",
+          "affiliation": "Department of Mining Engineering, Faculty of Engineering, University of Mohaghegh Ardabili University"
+        },
+        {"topic": "Integración de geotermia de baja entalpía en la acuicultura sostenible: Un modelo de economía circular aplicado en la industria hotelera de Costa Rica",
+          "presenter": "Víctor Daniel Soto",
+          "affiliation": "Universidad de Costa Rica"
+        },
+        {"topic": "Exploración magnética en Infiernillo Ciego, San Vicente: una comparación preliminar del método terrestre y con Vehículo Aéreo No Tripulado.",
+          "presenter": "Keren Jeannette Ventura Huezo",
+          "affiliation": "WING ESA"
+        },
+        {"topic": "Sistema geotermal Calabozos: una aproximación desde la petrología y geoquímica de la alteración hidrotermal",
+          "presenter": "Zulay Micaela Villarroel Barreno",
+          "affiliation": "CEGA - Universidad de Chile"
+        },
+        {"topic": "Energía geotérmica - generación eléctrica y usos directos",
+          "presenter": "Laura Flores y Allison Atiaja",
+          "affiliation": "AGE - Universidad Central del Ecuador"
+        }
+      ]
     },
     {
       "day": 3, "column": 6, "span": 2, "startTime": "08:30", "endTime": "09:10",
